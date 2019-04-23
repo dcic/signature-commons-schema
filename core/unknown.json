@@ -1,5 +1,5 @@
 {
-  "$id": "/@dcic/signature-commons-schema/core/examples.json",
+  "$id": "/@dcic/signature-commons-schema/core/unknown.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "A filler schema for use when one is not yet known.",
   "allOf": [

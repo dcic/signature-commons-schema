@@ -1,0 +1,157 @@
+@prefix bioschema: <http://bioschemas.org/> .
+@prefix rdfs: <https://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <https://www.w3.org/ns/shacl#> .
+@prefix sigcom: <https://raw.githubusercontent.com/dcic/signature-commons-schema/rdf/core.ttl#> .
+@prefix xsd: <https://www.w3.org/2001/XMLSchema#> .
+
+sigcom:Resource a rdfs:Class ;
+    rdfs:label "Resource"@en ;
+    rdfs:comment "A logical set of libraries"@en ;
+    rdfs:subClassOf schema:DataCatalog ;
+    rdfs:subClassOf bioschema:DataCatalog .
+
+sigcom:libraries a rdf:Property ;
+    rdfs:label "libraries"@en ;
+    rdfs:comment "The associated libraries"@en ;
+    schema:domainIncludes sigcom:Resource ;
+    schema:rangeIncludes sigcom:Library .
+
+
+sigcom:Library a rdfs:Class ;
+    rdfs:label "Library"@en ;
+    rdfs:comment "A logical set of signatures"@en ;
+    rdfs:subClassOf schema:Dataset ;
+    rdfs:subClassOf bioschema:Dataset .
+
+sigcom:resource a rdf:Property ;
+    rdfs:label "resource"@en ;
+    rdfs:comment "The associated resource"@en ;
+    schema:domainIncludes sigcom:Library ;
+    schema:rangeIncludes sigcom:Resource .
+
+sigcom:signatures a rdf:Property ;
+    rdfs:label "signatures"@en ;
+    rdfs:comment "The associated signatures"@en ;
+    schema:domainIncludes sigcom:Library ;
+    schema:rangeIncludes sigcom:Signature .
+
+
+sigcom:Signature a rdfs:Class ;
+    rdfs:label "Signature"@en ;
+    rdfs:comment "An experiment performed which can be measured in terms of a weighted set of entities."@en ;
+    rdfs:subClassOf schema:Dataset ;
+    rdfs:subClassOf bioschema:DataRecord .
+
+sigcom:library a rdf:Property ;
+    rdfs:label "library"@en ;
+    rdfs:comment "A library"@en ;
+    schema:domainIncludes sigcom:Signature ;
+    schema:rangeIncludes sigcom:Library .
+
+
+sigcom:Entity a rdfs:Class ;
+    rdfs:label "Entity"@en ;
+    rdfs:comment "The fundamental dimension being measured in the signature (Gene, Protein, ...)"@en ;
+    rdfs:subClassOf schema:Thing ;
+    rdfs:subClassOf bioschema:BioChemEntity .
+
+
+sigcom:PrimaryLabelGroup
+    a sh:PropertyGroup ;
+    sh:order 0 ;
+    rdfs:label "Primary Label"@en ;
+    rdfs:description "Properties in this group will be visible on the UI for identification"@en .
+
+sigcom:HiddenLabelGroup
+    a sh:PropertyGroup ;
+    sh:order 0 ;
+    rdfs:label "Hidden Label"@en ;
+    rdfs:description "Properties in this group will be hidden on the UI"@en .
+
+sigcom:NameShape a sh:PropertyShape ;
+    sh:path schema:name ;
+    sh:datatype xsd:string ;
+    sh:name "Name"@en ;
+    sh:description "Fully qualified and unique name"@en ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:group sigcom:PrimaryLabelGroup ;
+    sh:order 0 .
+
+sigcom:AlternateNameShape a sh:PropertyShape ;
+    sh:path schema:name ;
+    sh:datatype xsd:string ;
+    sh:path schema:alternateName ;
+    sh:name "Alternative Name(s)"@en ;
+    sh:description "Any alternative name(s)"@en ;
+    sh:group sigcom:HiddenLabelGroup .
+
+sigcom:DescriptionShape a sh:PropertyShape ;
+    sh:path schema:description ;
+    sh:datatype xsd:string ;
+    sh:name "Description"@en ;
+    sh:description "Informative and detailed description"@en ;
+    sh:maxCount 1 .
+
+sigcom:IdentifierShape a sh:PropertyShape ;
+    sh:path schema:name ;
+    sh:nodeKind sh:IRIOrLiteral ;
+    sh:name "Identifiers"@en ;
+    sh:description "identifier.org accession(s)"@en ;
+    sigcom:validate [
+        sigcom:javascript """
+        async function (value) {
+            let identifiersOrgResponse = await fetch(`http://identifiers.org/rest/identifiers/validate/${value}`)
+            if (identifiersOrgResponse.code !== 200)
+                assert False, 'Invalid Prefix'
+
+            let url = (await identifiersOrgResponse.json())['url']
+            let resolverResponse = await fetch(url)
+            if (resolverResponse.code !== 200)
+                assert False, 'Identifier failed to resolve'
+        }
+        """ ;
+    ] .
+
+sigcom:ResourceShape a sh:NodeShape ;
+    sh:targetClass sigcom:Resource ;
+    sh:property sigcom:NameShape ;
+    sh:property sigcom:DescriptionShape ;
+    sh:property sigcom:IdentifierShape ;
+    sh:property [
+        sh:path sigcom:libraries ;
+        sh:class sigcom:Library ;
+    ] .
+
+sigcom:LibraryShape a sh:NodeShape ;
+    sh:targetClass sigcom:Library ;
+    sh:property sigcom:NameShape ;
+    sh:property sigcom:DescriptionShape ;
+    sh:property sigcom:IdentifierShape ;
+    sh:property [
+        sh:path sigcom:resource ;
+        sh:class sigcom:Resource ;
+    ] ;
+    sh:property [
+        sh:path sigcom:signatures ;
+        sh:class sigcom:Signature ;
+    ] .
+
+sigcom:SignatureShape a sh:NodeShape ;
+    sh:targetClass sigcom:Signature ;
+    sh:property sigcom:IdentifierShape ;
+    sh:property [
+        sh:path sigcom:library ;
+        sh:class sigcom:Library ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] .
+
+sigcom:EntityShape a sh:NodeShape ;
+    sh:targetClass sigcom:Entity ;
+    sh:property sigcom:NameShape ;
+    sh:property sigcom:AlternateNameShape ;
+    sh:property sigcom:DescriptionShape ;
+    sh:property sigcom:IdentifierShape .

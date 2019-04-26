@@ -1,0 +1,78 @@
+@prefix bioschema: <http://bioschemas.org/> .
+@prefix rdfs: <https://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <https://www.w3.org/ns/shacl#> .
+@prefix sigcom: <https://raw.githubusercontent.com/dcic/signature-commons-schema/rdf/core.ttl#> .
+@prefix xsd: <https://www.w3.org/2001/XMLSchema#> .
+
+
+# TODO: Use an ontology instead
+sigcom:Assay a rdfs:Class, sh:Shape ;
+  sh:datatype xsd:string ;
+  sh:in (
+    "amino acid sequence analysis"@en,
+    "cell viability"@en,
+    "ChIP-seq"@en,
+    "computational prediction"@en,
+    "DNA sequencing"@en,
+    "L1000"@en,
+    "literature curation"@en,
+    "mass spectrometry"@en,
+    "microarray"@en,
+    "mining queries"@en,
+    "mouse KO phenotyping"@en,
+    "RNA-seq"@en,
+    "sequence analysis"@en,
+    "text mining"@en,
+    "various"@en
+  ) .
+
+sigcom:Organism a rdfs:Class, sh:Shape ;
+  sh:datatype xsd:string ;
+  sh:pattern "[A-Z][a-z]+ [a-z]+" .
+
+
+# UI Shape
+
+sigcom:NameShape a sh:PropertyShape ;
+  sh:path schema:name ;
+  sh:minCount 1 ;
+  sh:maxCount 1 ;
+  sh:severity sh:Violation ;
+  sh:message  "schema:name is necessary for the UI"@en .
+
+sigcom:ImageShape a sh:PropertyShape ;
+  sh:path schema:image ;
+  sh:name "Image"@en ;
+  sh:description "Thumbnail image for UI purposes"
+  sh:severity sh:Info "schema:image is necessary to see thumbnails on the UI"@en .
+
+sigcom:ResourceShape a sh:NodeShape ;
+  sh:targetClass sigcom:Resource ;
+  sh:property sigcom:NameShape ;
+  sh:property sigcom:ImageShape .
+
+sigcom:LibraryShape a sh:NodeShape ;
+  sh:targetClass sigcom:Library ;
+  sh:property sigcom:NameShape ;
+  sh:property sigcom:ImageShape .
+  sh:property [
+    sh:path sigcom:assay ;
+    sh:name "Assay"@en ;
+    sh:class sigcom:Assay ;
+  ] ;
+  sh:property [
+    sh:path sigcom:assay ;
+    sh:name "Assay"@en ;
+    sh:class sigcom:Assay ;
+  ] ;
+
+sigcom:SignatureShape a sh:NodeShape ;
+  sh:targetClass sigcom:Signature .
+
+
+
+sigcom:Gene a rdfs:Class ;
+  rdfs:label "Gene"@en ;
+  rdfs:comment "A gene"@en ;
+  rdfs:subClassOf bioschema:Gene .

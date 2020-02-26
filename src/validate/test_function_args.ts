@@ -1,4 +1,4 @@
-import {strict as assert} from 'assert'
+import * as assert from 'assert'
 import debug from '../util/debug'
 
 interface FunctionArgs {
@@ -9,7 +9,7 @@ export default function test_function_args<T extends {id?: string}>(object: Part
   debug('test_function_args(' + JSON.stringify(object) + ', ' + JSON.stringify(this.context) + ')')
 
   if(this.context.active) {
-    assert.notEqual(
+    assert.notStrictEqual(
       object.id,
       undefined
     )

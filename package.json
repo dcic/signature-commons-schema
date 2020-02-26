@@ -36,6 +36,7 @@
     "@types/debug": "0.0.31",
     "@types/node-fetch": "^2.3.7",
     "ajv": "^6.10.0",
+    "assert": "^2.0.0",
     "debug": "^4.1.1",
     "node-fetch": "^2.6.0"
   },

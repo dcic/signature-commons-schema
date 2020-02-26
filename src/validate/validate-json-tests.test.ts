@@ -1,4 +1,4 @@
-import { strict as assert } from 'assert'
+import * as assert from 'assert'
 import { validate, init_ajv } from '.'
 import * as glob from 'glob'
 import * as path from 'path'

@@ -1,19 +1,19 @@
 {
-  "$validator": "/dcic/signature-commons-schema/v5/core/examples.json",
+  "$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/examples.json",
   "tests": [
     {
       "name": "simple test with optional @",
       "valid": true,
-      "schema": "/dcic/signature-commons-schema/v5/core/meta.json",
+      "schema": "/dcic/signature-commons-schema/${API_VERSION}/core/meta.json",
       "data": {
-        "$validator": "/@dcic/signature-commons-schema/v5/core/unknown.json",
+        "$validator": "/@dcic/signature-commons-schema/${API_VERSION}/core/unknown.json",
         "test": "hi"
       }
     },
     {
       "name": "simple test with optional version",
       "valid": true,
-      "schema": "/dcic/signature-commons-schema/v5/core/meta.json",
+      "schema": "/dcic/signature-commons-schema/${API_VERSION}/core/meta.json",
       "data": {
         "$validator": "/dcic/signature-commons-schema/core/unknown.json",
         "test": "hi"
@@ -22,7 +22,7 @@
     {
       "name": "simple test with old version",
       "valid": true,
-      "schema": "/dcic/signature-commons-schema/v5/core/meta.json",
+      "schema": "/dcic/signature-commons-schema/${API_VERSION}/core/meta.json",
       "data": {
         "$validator": "/dcic/signature-commons-schema/v2/core/unknown.json",
         "test": "hi"

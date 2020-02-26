@@ -1,5 +1,5 @@
 {
-  "$validator": "/dcic/signature-commons-schema/v5/core/examples.json",
+  "$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/examples.json",
   "tests": [
     {
       "name": "simple pass",

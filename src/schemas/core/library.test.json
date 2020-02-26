@@ -1,0 +1,86 @@
+{
+  "$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/examples.json",
+  "tests": [
+    {
+      "name": "Library (Valid)",
+      "valid": true,
+      "schema": "/dcic/signature-commons-schema/${API_VERSION}/core/library.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/library.json",
+        "id": "186f2e0f-dcf9-49a9-a8e7-2d95226ed676",
+        "resource": "80d4feee-97e5-49f7-9517-f8137024ac8d",
+        "meta": {
+          "$validator": "/dcic/signature-commons-schema/${API_VERSION}/meta/library/sigcom.json",
+          "Description": "My random description",
+          "Spec": "hmm",
+          "Access_URL": "http://website.com",
+          "Assay": "mining queries",
+          "Filename": "some file",
+          "Icon": "/favico",
+          "Library_created_by": "some string",
+          "Library_name": "test lib",
+          "Link_to_resource": "http://resource.org",
+          "Organism": "Mus musculus",
+          "Original_source": "Sauce",
+          "Perturbation_Type": "gene",
+          "Primary_Resource": "Primary sauce",
+          "Readout": "mRNA",
+          "Version": "2018"
+        },
+        "dataset": "test",
+        "dataset_type": "geneset_library",
+        "signatures": [
+          "741281f8-b9bf-4586-8235-af293c2d23d6"
+        ]
+      }
+    },
+    {
+      "name": "Library (Invalid)",
+      "valid": false,
+      "schema": "/dcic/signature-commons-schema/${API_VERSION}/core/library.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/library.json",
+        "id": "186f2e0f-dcf9-49a9-a8e7-2d95226ed676",
+        "meta": {
+          "$validator": "/dcic/signature-commons-schema/${API_VERSION}/meta/library/sigcom.json",
+          "Description": 5
+        },
+        "signatures": [
+          "741281f8-b9bf-4586-8235-af293c2d23d6"
+        ]
+      }
+    },
+    {
+      "name": "Library Old (Valid)",
+      "valid": true,
+      "schema": "/dcic/signature-commons-schema/v2/core/library.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/v2/core/library.json",
+        "id": "186f2e0f-dcf9-49a9-a8e7-2d95226ed676",
+        "meta": {
+          "$validator": "/dcic/signature-commons-schema/v2/meta/library/draft-1.json",
+          "Description": "My random description",
+          "Spec": "hmm",
+          "Access_URL": "http://website.com",
+          "Assay": "mining queries",
+          "Filename": "some file",
+          "Icon": "/favico",
+          "Library_created_by": "some string",
+          "Library_name": "test lib",
+          "Link_to_resource": "http://resource.org",
+          "Organism": "Mus musculus",
+          "Original_source": "Sauce",
+          "Perturbation_Type": "gene",
+          "Primary_Resource": "Primary sauce",
+          "Readout": "mRNA",
+          "Version": "2018"
+        },
+        "dataset": "test",
+        "dataset_type": "geneset_library",
+        "signatures": [
+          "741281f8-b9bf-4586-8235-af293c2d23d6"
+        ]
+      }
+    }
+  ]
+}

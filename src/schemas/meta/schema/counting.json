@@ -1,0 +1,100 @@
+{
+  "$id": "/dcic/signature-commons-schema/${API_VERSION}/meta/counting/sigcom.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Metadata describing a chart or a count stat for the landing page of Signature Commons",
+  "allOf": [
+    {
+      "$ref": "/dcic/signature-commons-schema/${API_VERSION}/core/meta.json"
+    },
+    {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "Counts for metadata stats and charts",
+          "properties": {
+            "Field_Name": {
+              "description": "The name of the field",
+              "type": "string"
+            },
+            "Type": {
+              "description": "The expected datatype of that field",
+              "type": "string"
+            },
+            "Preferred_Name": {
+              "description": "Display name of the field on the landing page",
+              "type": "string"
+            },
+            "Table": {
+              "description": "Source table",
+              "type": "string"
+            },
+            "MDI_Icon": {
+              "description": "MDI icon to use",
+              "type": "string"
+            },
+            "Meta_Count": {
+              "description": "Count this field as part of the meta counts",
+              "type": "boolean"
+            },
+            "Bar_Count": {
+              "description": "Count this field as part of the Bbr chart",
+              "type": "boolean"
+            },
+            "Pie_Count": {
+              "description": "Count this field as part of the Pie chart",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "Field_Name",
+            "Type",
+            "Table"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Counts for table stats",
+          "properties": {
+            "Field_Name": {
+              "description": "The name of the field",
+              "type": "string"
+            },
+            "Type": {
+              "description": "The expected datatype of that field",
+              "type": "string"
+            },
+            "Preferred_Name": {
+              "description": "Display name of the field on the landing page",
+              "type": "string"
+            },
+            "Table": {
+              "description": "Source table",
+              "type": "string"
+            },
+            "MDI_Icon": {
+              "description": "MDI icon to use",
+              "type": "string"
+            },
+            "Table_Count": {
+              "description": "States that this field is a table not a metadata",
+              "type": "boolean"
+            },
+            "Visible_On_Landing": {
+              "description": "Make this field visible on landing page",
+              "type": "boolean"
+            },
+            "Visible_On_Admin": {
+              "description": "Make this field visible on admin page",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "Field_Name",
+            "Table_Count"
+          ]
+        }
+      ],
+      "type": "object"
+    }
+  ]
+}

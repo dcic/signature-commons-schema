@@ -1,0 +1,42 @@
+{
+  "$id": "/dcic/signature-commons-schema/${API_VERSION}/meta/resource/sigcom.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Metadata describing a signature commons resource",
+  "allOf": [
+    {
+      "$ref": "/dcic/signature-commons-schema/${API_VERSION}/core/meta.json"
+    },
+    {
+      "properties": {
+        "Resource_Name": {
+          "description": "The name of this resource",
+          "type": "string"
+        },
+        "PMID": {
+          "description": "The PMID associated with the resource's publication",
+          "type": "string"
+        },
+        "URL": {
+          "description": "A URL for accessing the resource",
+          "type": "string"
+        },
+        "Description": {
+          "description": "A description of the resource",
+          "type": "string"
+        },
+        "icon": {
+          "description": "Path to the favicon",
+          "type": "string"
+        },
+        "$hidden": {
+          "description": "Tells the UI to hide this resource",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Resource_Name"
+      ],
+      "type": "object"
+    }
+  ]
+}

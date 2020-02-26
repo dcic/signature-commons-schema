@@ -1,5 +1,5 @@
 {
-  "$validator": "/dcic/signature-commons-schema/v5/core/examples.json",
+  "$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/examples.json",
   "tests": [
     {
       "name": "Bio ontology with term (Valid)",
@@ -41,7 +41,7 @@
       "name": "Bio ontology without ontology (Invalid)",
       "valid": false,
       "skip": "process.env.BIO_ONTOLOGY_API_KEY === undefined",
-      "schema": "/dcic/signature-commons-schema/v5/dist/validators/bioontology",
+      "schema": "/dcic/signature-commons-schema/${API_VERSION}/dist/validators/bioontology",
       "data": {
         "label": "allantoic fluid"
       }
@@ -51,7 +51,7 @@
     {
       "$id": "specific-ontology",
       "$validator": [
-        "/dcic/signature-commons-schema/v5/dist/validators/bioontology",
+        "/dcic/signature-commons-schema/${API_VERSION}/dist/validators/bioontology",
         {
           "ontology": "BTO"
         }

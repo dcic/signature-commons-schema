@@ -1,0 +1,84 @@
+{
+  "$id": "/dcic/signature-commons-schema/${API_VERSION}/meta/signature/ilincs.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Signature metadata as described by http://www.ilincs.org/ilincs.json",
+  "allOf": [
+    {
+      "$ref": "/dcic/signature-commons-schema/${API_VERSION}/core/meta.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "antibodytarget": {
+          "type": "string"
+        },
+        "cellline": {
+          "type": "string"
+        },
+        "cid": {
+          "type": "string"
+        },
+        "compound": {
+          "type": "string"
+        },
+        "concentration": {
+          "type": "string"
+        },
+        "concordancetable": {
+          "type": "string"
+        },
+        "datasetid": {
+          "type": "string"
+        },
+        "factor": {
+          "type": "string"
+        },
+        "level1": {
+          "type": "string"
+        },
+        "level2": {
+          "type": "string"
+        },
+        "libraryid": {
+          "type": "string"
+        },
+        "lincspertid": {
+          "type": "string"
+        },
+        "nCtrSamples": {
+          "type": "number"
+        },
+        "nTrtSamples": {
+          "type": "number"
+        },
+        "peaktype": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "signatureid": {
+          "type": "string"
+        },
+        "time": {
+          "type": "string"
+        },
+        "treatment": {
+          "type": "string"
+        },
+        "perturbagenID": {
+          "type": "string"
+        },
+        "stitchID": {
+          "type": "string"
+        },
+        "pubChemID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "signatureid"
+      ]
+    }
+  ]
+}

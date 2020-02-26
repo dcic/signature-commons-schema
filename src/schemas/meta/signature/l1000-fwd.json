@@ -1,0 +1,95 @@
+{
+  "$id": "/dcic/signature-commons-schema/${API_VERSION}/meta/signature/l1000-fwd.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Signature metadata as described by http://amp.pharm.mssm.edu/l1000fwd/api_page",
+  "allOf": [
+    {
+      "$ref": "/dcic/signature-commons-schema/${API_VERSION}/core/meta.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "pert_time": {
+          "type": "integer",
+          "example": 24
+        },
+        "cell_id": {
+          "type": "string",
+          "example": "HA1E"
+        },
+        "mean_cosine_dist_centered_by_batch": {
+          "type": "number",
+          "example": 0.7235488042208277
+        },
+        "up_genes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "batch": {
+          "type": "string",
+          "example": "CPC006_HA1E_24H"
+        },
+        "pvalue": { 
+          "type": "number",
+          "format": "float",
+          "example": 0.0
+        },
+        "pert_dose": {
+          "type": "number",
+          "format": "float",
+          "example": 40.0
+        },
+        "combined_genes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": [
+            "HSPA2",
+            "ADD3"
+          ]
+        },
+        "pert_id": {
+          "type": "string",
+          "example": "BRD-A70155556"
+        },
+        "sig_id": {
+          "type": "string",
+          "example": "CPC006_HA1E_24H:BRD-A70155556-001-04-4:40"
+        },
+        "distil_id": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": [
+            "CPC006_HA1E_24H_X1.A2_B4_DUO52HI53LO:D24",
+            "CPC006_HA1E_24H_X1.A2_F1B3_DUO52HI53LO:D24"
+          ]
+        },
+        "down_genes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": [
+            "SFTPD",
+            "HSPA2"
+          ]
+        },
+        "pert_desc": {
+          "type": "string",
+          "example": "NP-001236"
+        }
+      },
+      "required": [
+        "cell_id",
+        "batch",
+        "sig_id",
+        "distil_id"
+      ]
+    }
+  ]
+}

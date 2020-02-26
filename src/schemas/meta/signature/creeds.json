@@ -1,0 +1,137 @@
+{
+  "$id": "/dcic/signature-commons-schema/${API_VERSION}/meta/signature/creeds.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Signature metadata as seen in http://amp.pharm.mssm.edu/creeds/#downloads json downloads",
+  "allOf": [
+    {
+      "$ref": "/dcic/signature-commons-schema/${API_VERSION}/core/meta.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "ctrl_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "example": "GSM282582"
+          }
+        },
+        "Cell_Line": {
+          "description": "The cell line context",
+          "items": {
+            "properties": {
+              "Accession": {
+                "description": "Ontology accession",
+                "type": "string"
+              },
+              "Name": {
+                "description": "Official name of cell line",
+                "type": "string"
+              }
+            },
+            "required": [
+              "Name"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "curator": {
+          "type": "string"
+        },
+        "Disease": {
+          "$ref": "/dcic/signature-commons-schema/${API_VERSION}/meta/signature/perturbation/disease.json",
+          "description": "Disease perturbations"
+        },
+        "geo_id": {
+          "type": "string",
+          "example": "GSE11208"
+        },
+        "id": {
+          "type": "string",
+          "example": "dz:325"
+        },
+        "Organism": {
+          "type": "string",
+          "example": "Homo sapiens"
+        },
+        "pert_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "example": "GSM282584"
+          }
+        },
+        "platform": {
+          "type": "string",
+          "example": "GPL570"
+        },
+        "umls_cui": {
+          "type": "string",
+          "example": "C0028043"
+        },
+        "version": {
+          "type": "string",
+          "example": "1.0"
+        },
+        "Small_Molecule": {
+          "$ref": "/dcic/signature-commons-schema/${API_VERSION}/meta/signature/perturbation/small-molecule.json",
+          "description": "Small Molecule used in the study"
+        },
+        "drug_name": {
+          "type": "string",
+          "example": "Fluorouracil"
+        },
+        "drugbank_id": {
+          "type": "string",
+          "example": "DB00544"
+        },
+        "pubchem_cid": {
+          "type": "number",
+          "example": 3385
+        },
+        "smiles": {
+          "type": "string",
+          "example": "C1=C(C(=O)NC(=O)N1)F"
+        },
+        "chdir_norm": {
+          "type": "string",
+          "example": "C1=C(C(=O)NC(=O)N1)F"
+        },
+        "Tissue": {
+          "description": "The tissue context",
+          "items": {
+            "properties": {
+              "Accession": {
+                "description": "Ontology accession",
+                "type": "string"
+              },
+              "Name": {
+                "description": "Name of the tissue",
+                "type": "string"
+              }
+            },
+            "required": [
+              "Name"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "Gene": {
+          "$ref": "/dcic/signature-commons-schema/${API_VERSION}/meta/signature/perturbation/gene.json",
+          "description": "Gene involved"
+        }
+      },
+      "required": [
+        "ctrl_ids",
+        "geo_id",
+        "id",
+        "Organism",
+        "pert_ids",
+        "platform",
+        "version"
+      ]
+    }
+  ]
+}

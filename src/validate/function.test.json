@@ -1,12 +1,12 @@
 {
-  "$validator": "/dcic/signature-commons-schema/v5/core/examples.json",
+  "$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/examples.json",
   "tests": [
     {
       "name": "function (Valid)",
       "valid": true,
       "schema": "meta",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v5/dist/validate/test_function.js",
+        "$validator": "/dcic/signature-commons-schema/${API_VERSION}/dist/validate/test_function.js",
         "id": 0
       }
     },
@@ -15,7 +15,7 @@
       "valid": false,
       "schema": "meta",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v5/dist/validate/test_function.js"
+        "$validator": "/dcic/signature-commons-schema/${API_VERSION}/dist/validate/test_function.js"
       }
     },
     {
@@ -23,7 +23,7 @@
       "valid": true,
       "schema": "meta",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v5/dist/validate/test_async_function.js",
+        "$validator": "/dcic/signature-commons-schema/${API_VERSION}/dist/validate/test_async_function.js",
         "id": 0
       }
     },
@@ -32,7 +32,7 @@
       "valid": false,
       "schema": "meta",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v5/dist/validate/test_async_function.js"
+        "$validator": "/dcic/signature-commons-schema/${API_VERSION}/dist/validate/test_async_function.js"
       }
     },
     {
@@ -71,7 +71,7 @@
     {
       "$id": "function-args-active",
       "$validator": [
-        "/dcic/signature-commons-schema/v5/dist/validate/test_function_args.js",
+        "/dcic/signature-commons-schema/${API_VERSION}/dist/validate/test_function_args.js",
         {
           "active": true
         }
@@ -80,7 +80,7 @@
     {
       "$id": "function-args-not-active",
       "$validator": [
-        "/dcic/signature-commons-schema/v5/dist/validate/test_function_args.js",
+        "/dcic/signature-commons-schema/${API_VERSION}/dist/validate/test_function_args.js",
         {
           "active": false
         }

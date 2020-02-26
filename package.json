@@ -1,6 +1,7 @@
 {
   "name": "@dcic/signature-commons-schema",
   "version": "1.3.9",
+  "apiVersion": "v5",
   "description": "JSON-Schema validators for signature commons entities",
   "bin": {
     "signature-commons-schema": "dist/cli.js"
@@ -18,7 +19,9 @@
   "scripts": {
     "build": "tsc",
     "clean": "test -d ./dist && rm -r ./dist || exit 0",
-    "generate": "ts-node bin/generate_ts.ts",
+    "generate:json": "ts-node bin/generate_json.ts",
+    "generate:ts": "ts-node bin/generate_ts.ts",
+    "generate": "npm run generate:json && npm run generate:ts",
     "prepublishOnly": "npm run clean && npm run build && npm run generate",
     "test": "mocha -r ts-node/register src/**/*.test.ts"
   },

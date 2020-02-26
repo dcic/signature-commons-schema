@@ -1,0 +1,210 @@
+{
+  "$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/examples.json",
+  "tests": [
+    {
+      "name": "Schema (Valid)",
+      "valid": true,
+      "schema": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+        "id": "302fbc16-4f94-47ad-847a-b1640db1f0d1",
+        "meta": {
+          "$validator": "/dcic/signature-commons-schema/${API_VERSION}/meta/schema/ui-schema.json",
+          "match": {
+            "${'${$validator}'}": "/@?dcic/signature-commons-schema/(v[0-9]+/)?core/library.json"
+          },
+          "properties": {
+            "Image": {
+              "visibility": 1,
+              "type": "header-img",
+              "src": "${'${meta.icon}'}",
+              "alt": "${'${meta.tool_name}'}"
+            },
+            "Title": {
+              "visibility": 1,
+              "type": "title",
+              "text": "${'${meta.tool_name}'}",
+              "href": "${'${meta.tool_homepage_url}'}",
+              "priority": 1
+            },
+            "Journal": {
+              "visibility": 1,
+              "type": "subtitle",
+              "text": "${'${meta.subtitle}'}",
+              "subtitle": true,
+              "priority": 2
+            },
+            "Pubmed": {
+              "visibility": 1,
+              "type": "display",
+              "text": "${'${meta.pubmed}'}",
+              "href": "${'${meta.pubmed}'}",
+              "display": true,
+              "priority": 2
+            },
+            "Last Author": {
+              "visibility": 1,
+              "type": "text",
+              "text": "${'${meta.last_author.name}'}",
+              "icon": "mdi-desktop-tower-monitor",
+              "priority": 4
+            },
+            "Description": {
+              "visibility": 1,
+              "type": "description",
+              "text": "${'${meta.Description}'}",
+              "icon": "mdi-certificate",
+              "priority": 5
+            },
+            "Pubmed Citations": {
+              "visibility": 1,
+              "type": "score",
+              "text": "${'${meta.total_pubmed_citations}'}",
+              "fiend": "meta.total_pubmed_citations",
+              "icon": "mdi-book-open-page-variant",
+              "priority": 10
+            },
+            "Keywords": {
+              "visibility": 1,
+              "type": "array",
+              "text": "",
+              "field": "meta.Keywords",
+              "icon": "mdi-twitter",
+              "priority": 10
+            },
+            "Insignia": {
+              "visibility": 1,
+              "type": "component",
+              "text": "@dcic/standalone/insignia",
+              "location": "list",
+              "props": {
+                "url": {
+                  "type": "string",
+                  "text": "${'${meta.url}'}"
+                },
+                "visible": {
+                  "type": "boolean",
+                  "text": "${'${meta.visible}'}"
+                },
+                "style": {
+                  "type": "object",
+                  "field": "meta.style"
+                }
+              },
+              "priority": 7
+            },
+            "Default": {
+              "visibility": 1,
+              "type": "text-default",
+              "text": "HI",
+              "icon": "mdi-twitter",
+              "priority": 10
+            }
+          }
+        } 
+      }
+    },
+    {
+      "name": "Schema (Invalid)",
+      "valid": false,
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
+        "id": "302fbc16-4f94-47ad-847a-b1640db1f0d1",
+        "meta": {
+          "$validator": "/@dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
+          "match": {
+            "${'${$validator}'}": "/@?dcic/signature-commons-schema/(v[0-9]+/)?core/library.json"
+          },
+          "properties": {
+            "Image": {
+              "visibility": 1,
+              "type": "header-img",
+              "alt": "${'${meta.tool_name}'}"
+            },
+            "Title": {
+              "visibility": 1,
+              "type": "title",
+              "text": "${'${meta.tool_name}'}",
+              "href": "${'${meta.tool_homepage_url}'}",
+              "priority": 1
+            },
+            "Journal": {
+              "visibility": 1,
+              "type": "subtitle",
+              "text": "${'${meta.subtitle}'}",
+              "subtitle": true,
+              "priority": 2
+            },
+            "Pubmed": {
+              "visibility": 1,
+              "type": "display",
+              "text": "${'${meta.pubmed}'}",
+              "href": "${'${meta.pubmed}'}",
+              "display": true,
+              "priority": 2
+            },
+            "Last Author": {
+              "visibility": 1,
+              "type": "text",
+              "text": "${'${meta.last_author.'}name}",
+              "icon": "mdi-desktop-tower-monitor",
+              "priority": 4
+            },
+            "Description": {
+              "visibility": 1,
+              "type": "description",
+              "text": "${'${meta.Description}'}",
+              "icon": "mdi-certificate",
+              "priority": 5
+            },
+            "Pubmed Citations": {
+              "visibility": 1,
+              "type": "score",
+              "text": "${'${meta.total_pubmed_citations}'}",
+              "fiend": "meta.total_pubmed_citations",
+              "icon": "mdi-book-open-page-variant",
+              "priority": 10
+            },
+            "Keywords": {
+              "visibility": 1,
+              "type": "array",
+              "text": "",
+              "field": "meta.Keywords",
+              "icon": "mdi-twitter",
+              "priority": 10
+            },
+            "Insignia": {
+              "visibility": 1,
+              "type": "component",
+              "text": "@dcic/standalone/insignia",
+              "location": "list",
+              "props": {
+                "url": {
+                  "type": "string",
+                  "text": "${'${meta.url}'}"
+                },
+                "visible": {
+                  "type": "boolean",
+                  "text": "${'${meta.visible}'}"
+                },
+                "style": {
+                  "type": "object",
+                  "field": "meta.style"
+                }
+              },
+              "priority": 7
+            },
+            "Default": {
+              "visibility": 1,
+              "type": "text-default",
+              "text": "HI",
+              "icon": "mdi-twitter",
+              "priority": 10
+            }
+          }
+        } 
+      }
+    }
+  ]
+}

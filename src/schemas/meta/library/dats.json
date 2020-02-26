@@ -1,0 +1,18 @@
+{
+  "$id": "/dcic/signature-commons-schema/${API_VERSION}/meta/library/dats.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Library metadata as described by dats",
+  "allOf": [
+    {
+      "$ref": "/dcic/signature-commons-schema/${API_VERSION}/core/meta.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "https://w3id.org/dats/schema/dataset_schema.json#"
+        }
+      }
+    }
+  ]
+}

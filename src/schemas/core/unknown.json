@@ -1,0 +1,10 @@
+{
+  "$id": "/dcic/signature-commons-schema/${API_VERSION}/core/examples.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "A filler schema for use when one is not yet known.",
+  "allOf": [
+    {
+      "$ref": "/dcic/signature-commons-schema/${API_VERSION}/core/meta.json"
+    }
+  ]
+}

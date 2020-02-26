@@ -1,0 +1,195 @@
+{
+  "$validator": "/dcic/signature-commons-schema/v5/core/examples.json",
+  "tests": [
+    {
+      "name": "Schema (Valid)",
+      "valid": true,
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
+        "id": "302fbc16-4f94-47ad-847a-b1640db1f0d1",
+        "meta": {
+          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
+          "match": {
+            "${$validator}": "/dcic/signature-commons-schema/(v[0-9]+/)?core/dataset.json",
+            "${dataset}": "enrichr_geneset"
+          },
+          "properties": {
+            "Image": {
+              "visibility": 1,
+              "type": "header-img",
+              "alt": "Enrichr",
+              "src": "${PREFIX}/static/images/enrichr.png"
+            },
+            "Libraries": {
+              "visibility": 1,
+              "type": "text",
+              "text": "128"
+            },
+            "Signatures": {
+              "visibility": 1,
+              "type": "text",
+              "text": "234846"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Schema (Invalid)",
+      "valid": false,
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
+        "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
+        "meta": {
+          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
+          "match": {
+            "${$validator}": "/@dcic/signature-commons-schema/(v[0-9]+/)?core/library.json"
+          },
+          "properties": {
+            "Image": {
+              "type": "blah"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Counts Table (Valid)",
+      "valid": true,
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
+        "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
+        "meta": {
+          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json",
+          "Field_Name": "libraries",
+          "Type": "table",
+          "Preferred_Name": "Libraries",
+          "MDI_Icon": "mdi-library-books",
+          "Table_Count": true,
+          "Visible_On_Admin": true 
+        }
+      }
+    },
+    {
+      "name": "Counts Meta (Valid)",
+      "valid": true,
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
+        "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
+        "meta": {
+          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json",
+          "Field_Name": "peak",
+          "Type": "string",
+          "Table": "signatures",
+          "MDI_Icon": "mdi-chart-bell-curve",
+          "Meta_Count": false,
+          "Pie_Count": false
+        }
+      }
+    },
+    {
+      "name": "Counts Table (invalid)",
+      "valid": false,
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
+        "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
+        "meta": {
+          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json",
+          "Field_Name": "libraries",
+          "Preferred_Name": "Libraries",
+          "MDI_Icon": "mdi-library-books",
+          "Table_Count": "true",
+          "Visible_On_Landing": false,
+          "Visible_On_Admin": true 
+        }
+      }
+    },
+    {
+      "name": "Counts Meta (invalid)",
+      "valid": false,
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
+        "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
+        "meta": {
+          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json",
+          "Field_Name": "peak",
+          "Type": "string",
+          "MDI_Icon": "mdi-chart-bell-curve",
+          "Meta_Count": false,
+          "Pie_Count": false
+        }
+      }
+    },
+    {
+      "name": "Counts Meta (invalid)",
+      "valid": false,
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
+        "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
+        "meta": {
+          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/counting.json",
+          "Field_Name": "peak",
+          "Type": "string",
+          "Table": "libraries",
+          "MDI_Icon": "mdi-chart-bell-curve",
+          "Meta_Count": "false",
+          "Pie_Count": false
+        }
+      }
+    },
+    {
+      "name": "UI (Valid)",
+      "valid": true,
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
+        "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
+        "meta": {
+          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/landing-ui.json",
+          "admin": true,
+          "content": {
+            "resource_from_library": [
+              "some_important_field"
+            ],
+            "library_name": "Use_this_field"
+          }
+        }
+      }
+    },
+    {
+      "name": "UI (invalid)",
+      "valid": false,
+      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
+        "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
+        "meta": {
+          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/landing-ui.json",
+          "admin": "true",
+          "content": {
+            "metadata_placeholder": "Search over half a million signatures",
+            "geneset_placeholder": "Genes that are regulated in signature or overlap with gene set",
+            "up_genes_placeholder": "Genes that are up-regulated in signature or overlap with gene set",
+            "down_genes_placeholder": "Genes that are down-regulated in signature or overlap with gene set",
+            "text_1": "Explore an extensive collection of well-annotated gene-sets and signatures",
+            "text_2": "Search across a broad gathering of perturbations",
+            "text_3": "Examine metadata:",
+            "text_4": "Start using Signature Commons on your project",
+            "resource_pie_caption": "Signatures per Resource",
+            "bar-chart": {
+              "Field_Name": ["Version"],
+              "Caption": "Libraries per year"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

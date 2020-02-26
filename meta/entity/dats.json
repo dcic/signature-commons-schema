@@ -1,0 +1,23 @@
+{
+  "$id": "/dcic/signature-commons-schema/v5/meta/entity/dats.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Entity metadata as described by dats",
+  "allOf": [
+    {
+      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
+    },
+    {
+      "anyOf": [
+          {"$ref" : "https://w3id.org/dats/schema/biological_entity_schema.json"},
+          {"$ref" : "https://w3id.org/dats/schema/taxonomic_info_schema.json"},
+          {"$ref" : "https://w3id.org/dats/schema/disease_schema.json"},
+          {"$ref" : "https://w3id.org/dats/schema/molecular_entity_schema.json"},
+          {"$ref" : "https://w3id.org/dats/schema/anatomical_part_schema.json"},
+          {"$ref" : "https://w3id.org/dats/schema/treatment_schema.json"},
+          {"$ref" : "https://w3id.org/dats/schema/material_schema.json"},
+          {"$ref" : "https://w3id.org/dats/schema/study_group_schema.json"},
+          {"$ref" : "https://w3id.org/dats/schema/annotation_schema.json"}
+      ]
+    }
+  ]
+}

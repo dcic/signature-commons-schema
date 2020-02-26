@@ -1,0 +1,53 @@
+{
+  "$id": "/dcic/signature-commons-schema/v5/meta/schemas/match.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "A object representing a matching rule",
+  "type": "object",
+  "patternProperties": {
+    ".*": {
+      "description": "Any key is mapped to something it should match (be equal to when resolved)",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "integer"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "object",
+          "description": "Operators can modify the type of comparison to be used for the match",
+          "patternProperties": {
+            "^(eq|ne|lt|gt|lte|gte)$": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "number"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

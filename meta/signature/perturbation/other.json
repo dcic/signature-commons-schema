@@ -1,0 +1,32 @@
+{
+  "$id": "/dcic/signature-commons-schema/v5/meta/signature/perturbation/other.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "allOf": [
+    {
+      "type": "array",
+      "description": "Other kinds of perturbation",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "Name": {
+              "description": "The name of the perturbation",
+              "type": "string"
+            },
+            "Accession": {
+              "description": "The ontology accession of the perturbation",
+              "type": "string"
+            },
+            "Remarks": {
+              "description": "Other metadata",
+              "type": "string"
+            }
+          },
+          "required": [
+            "Name"
+          ]
+        }
+      ]
+    }
+  ]
+}

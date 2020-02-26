@@ -1,0 +1,297 @@
+{
+  "$id": "/dcic/signature-commons-schema/v5/meta/signature/clue-io.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Signature metadata as described by https://api.clue.io/public/apis",
+  "allOf": [
+    {
+      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "brew_prefix": {
+          "description": "Identifier of the parent brew folder",
+          "type": "string"
+        },
+         "Cell_Line": {
+          "description": "The cell line context",
+          "items": {
+            "properties": {
+              "Accession": {
+                "description": "Ontology accession",
+                "type": "string"
+              },
+              "Name": {
+                "description": "Official name of cell line",
+                "type": "string"
+              }
+            },
+            "required": [
+              "Name"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "cgs_vs_sister_cc": {
+          "description": "Spearman correlation of cgs with each hp",
+          "type": "number"
+        },
+        "distil_cc_pw": {
+          "description": "Upper triangle of pair-wise spearman correlation matrix between hairpins",
+          "type": "number"
+        },
+        "distil_cc_q75": {
+          "description": "75th quantile of pairwise spearman correlations in landmark space of replicate zscores",
+          "type": "number"
+        },
+        "distil_id": {
+          "description": "Identifiers of replicate instances",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "distil_nrep": {
+          "description": "Number of input signatures, note might be different from distil_nsample",
+          "type": "number"
+        },
+        "distil_nsample": {
+          "description": "Number of replicates",
+          "type": "number"
+        },
+        "distil_pert_id": {
+          "description": "Source perturbagen identifiers for consensus signatures",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "distil_ss": {
+          "description": "Signature strength with n=100 landmarks",
+          "type": "number"
+        },
+        "distil_wt": {
+          "description": "Weights of replicates used for modz",
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "dn100_bing": {
+          "description": "100 most downregulated bing entrez gene ids",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dn100_full": {
+          "description": "100 most downregulated entrez gene ids",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dn50_lm": {
+          "description": "50 most downregulated landmark entrez gene ids",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ds_index": {
+          "description": "one-based index of columns of the signature score and rank matrix",
+          "type": "number"
+        },
+        "in_summly": {
+          "description": "Is in summly space",
+          "type": "boolean"
+        },
+        "is_gold": {
+          "description": "Is reproducible and self-connected signature",
+          "type": "boolean"
+        },
+        "ngenes_modulated_dn_lm": {
+          "description": "Number of downregulated landmarks (zs <= -2)",
+          "type": "number"
+        },
+        "ngenes_modulated_up_lm": {
+          "description": "Number of upregulated landmarks (zs >= 2)",
+          "type": "number"
+        },
+        "num_brew": {
+          "description": "Number of input brew cohorts included",
+          "type": "number"
+        },
+        "pct_self_rank_q25": {
+          "description": "Self connectivity of replicates expressed as a percentage of total instances in a brew",
+          "type": "number"
+        },
+        "pert_desc": {
+          "description": "Perturbation description",
+          "type": "string"
+        },
+        "pert_dose": {
+          "description": "Treatment dose",
+          "type": "number"
+        },
+        "pert_dose_unit": {
+          "description": "Treatment dose unit",
+          "type": "string"
+        },
+        "pert_id": {
+          "description": "Perturbation id",
+          "type": "string"
+        },
+        "pert_idose": {
+          "description": "Perturbation dose (internal)",
+          "type": "string"
+        },
+        "pert_iname": {
+          "description": "Pert description (internal)",
+          "type": "string"
+        },
+        "pert_itime": {
+          "description": "Perturbation time (internal)",
+          "type": "string"
+        },
+        "pert_mfc_id": {
+          "description": "Perturbation id that includes batch information",
+          "type": "string"
+        },
+        "pert_time": {
+          "description": "Treatment time",
+          "type": "number"
+        },
+        "pert_time_unit": {
+          "description": "Treatment time unit",
+          "type": "string"
+        },
+        "pert_type": {
+          "description": "Perturbation type",
+          "type": "string"
+        },
+        "pool_id": {
+          "description": "Pool name",
+          "type": "string"
+        },
+        "provenance_code": {
+          "description": "Process provenance code",
+          "type": "string"
+        },
+        "seed_seq_6mer": {
+          "description": "Seed sequence 6mer of hairpin",
+          "type": "string"
+        },
+        "seed_seq_7mer": {
+          "description": "Seed sequence 7mer of hairpin",
+          "type": "string"
+        },
+        "sig_id": {
+          "description": "Brew signature id, will match column ids of affogato signature matrix",
+          "type": "string"
+        },
+        "target_is_bing": {
+          "description": "Is target gene in bing space?",
+          "type": "boolean"
+        },
+        "target_is_lm": {
+          "description": "Is target gene a landmark?",
+          "type": "boolean"
+        },
+        "target_rank_bing": {
+          "description": "Column rank of target gene in bing space",
+          "type": "number"
+        },
+        "target_rank_full": {
+          "description": "Column rank of target gene in full space",
+          "type": "number"
+        },
+        "target_seq": {
+          "description": "Full 21-length sequence targeted by hairpin",
+          "type": "string"
+        },
+        "target_zs": {
+          "description": "zscore of target gene",
+          "type": "number"
+        },
+        "up100_bing": {
+          "description": "100 most up regulated bing entrez gene ids",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "up100_full": {
+          "description": "100 most up regulated entrez gene ids",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "up50_lm": {
+          "description": "50 most upregulated landmark entrez gene ids",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "zmad_ref": {
+          "description": "reference samples for zscore computation",
+          "type": "string"
+        },
+        "id": {
+          "type":"string",
+          "pattern":"^[a-fA-Fd]{24}$"
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "last_modified": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "pert_mfc_desc": {
+          "type": "string",
+          "example": "DMSO"
+        },
+        "qc_tag": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": ["NOT_SELFCON"]
+        }
+      },
+      "required": [
+        "brew_prefix",
+        "Cell_Line",
+        "created",
+        "distil_cc_q75",
+        "distil_id",
+        "distil_nsample",
+        "distil_ss",
+        "ds_index",
+        "id",
+        "is_gold",
+        "ngenes_modulated_dn_lm",
+        "ngenes_modulated_up_lm",
+        "pct_self_rank_q25",
+        "pert_dose_unit",
+        "pert_dose",
+        "pert_id",
+        "pert_idose",
+        "pert_iname",
+        "pert_itime",
+        "pert_time_unit",
+        "pert_time",
+        "pert_type",
+        "pool_id",
+        "provenance_code",
+        "sig_id",
+        "zmad_ref"
+      ]
+    }
+  ]
+}

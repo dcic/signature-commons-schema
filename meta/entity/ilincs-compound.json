@@ -1,0 +1,38 @@
+{
+  "$id": "/dcic/signature-commons-schema/v5/meta/entity/ilincs-compound.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Compound metadata as described by http://www.ilincs.org/ilincs.json",
+  "allOf": [
+    {
+      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "pubchemcid": {
+          "type": "number",
+          "format": "double"
+        },
+        "stitchid": {
+          "type": "string"
+        },
+        "perturbagenid": {
+          "type": "string"
+        },
+        "compound": {
+          "type": "string"
+        },
+        "lincspertid": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "pubchemcid",
+        "stitchid",
+        "perturbagenid",
+        "compound",
+        "lincspertid"
+      ]
+    }
+  ]
+}

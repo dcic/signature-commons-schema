@@ -1,0 +1,51 @@
+{
+  "$id": "/dcic/signature-commons-schema/v5/core/signature.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "allOf": [
+    {
+      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Globally unique identifier referring to this signature."
+        },
+        "meta": {
+          "$ref": "/dcic/signature-commons-schema/v5/core/meta.json",
+          "description": "Arbitrary validatable metadata describing the library"
+        },
+        "library": {
+          "type": "string",
+          "description": "Globally unique identifier referring to this signature's parent library."
+        },
+        "entities": {
+          "type": "array",
+          "description": "List of entities that make up this signature",
+          "items": {
+            "type": "object",
+            "properties": {
+              "entity": {
+                "type": "string",
+                "description": "Globally unique identifier referring to the entity measured"
+              },
+              "value": {
+                "type": "number",
+                "description": "Value attached to this relationshio, what this value means is defined by signature meta"
+              }
+            },
+            "required": [
+              "entity"
+            ]
+          }
+        }
+      },
+      "required": [
+        "id",
+        "meta",
+        "library"
+      ]
+    }
+  ]
+}

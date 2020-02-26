@@ -1,0 +1,18 @@
+{
+  "$id": "/dcic/signature-commons-schema/v5/core/meta.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "$validator": {
+    "$comment": "Validate based on run-time property of $validator on instance",
+    "$data": "0/$validator"
+  },
+  "properties": {
+    "$validator": {
+      "type": "string",
+      "description": "URI to schema or module for validation of this instance"
+    }
+  },
+  "required": [
+    "$validator"
+  ]
+}

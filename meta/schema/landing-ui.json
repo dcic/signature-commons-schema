@@ -1,0 +1,51 @@
+{
+  "$id": "/dcic/signature-commons-schema/v5/meta/schema/landing-ui.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Metadata describing a signature commons resource",
+  "allOf": [
+    {
+      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
+    },
+    {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "Landing page changes",
+          "properties": {
+            "landing": {
+              "type": "boolean",
+              "description": "use these changes in the landing page"
+            },
+            "content": {
+              "$ref": "/dcic/signature-commons-schema/v5/meta/schema/content.json",
+              "description": "Disease perturbations"
+            }
+          },
+          "required": [
+            "landing",
+            "content"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Landing page changes",
+          "properties": {
+            "admin": {
+              "type": "boolean",
+              "description": "use these changes in the admin page"
+            },
+            "content": {
+              "$ref": "/dcic/signature-commons-schema/v5/meta/schema/content.json",
+              "description": "Disease perturbations"
+            }
+          },
+          "required": [
+            "admin",
+            "content"
+          ]
+        }
+      ],
+      "type": "object"
+    }
+  ]
+}

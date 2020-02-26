@@ -18,7 +18,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "test -d ./dist && rm -r ./dist || exit 0",
-    "generate": "ts-node bin/generate.ts",
+    "generate": "ts-node bin/generate_ts.ts",
     "prepublishOnly": "npm run clean && npm run build && npm run generate",
     "test": "mocha -r ts-node/register src/**/*.test.ts"
   },

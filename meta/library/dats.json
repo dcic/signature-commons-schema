@@ -7,7 +7,12 @@
       "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
     },
     {
-      "$ref": "https://w3id.org/dats/schema/dataset_schema.json"
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "https://w3id.org/dats/schema/dataset_schema.json#"
+        }
+      }
     }
   ]
 }

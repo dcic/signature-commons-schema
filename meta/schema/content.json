@@ -113,8 +113,46 @@
               "description": "Caption to use for bar charts"
             }
           }
+        },
+        "library_name": {
+          "description": "Field to use as 'library name'",
+          "type": "string"
+        },
+        "resource_name": {
+          "description": "Field to use as 'resource name'",
+          "type": "string"
+        },
+        "preferred_name_singular": {
+          "description": "Singular names of tables (used when displaying metadata",
+          "type": "object",
+          "properties": {
+            "libraries": {
+              "description": "preferred singular term for libraries"
+            },
+            "signatures": {
+              "description": "preferred singular term for signatures"
+            },
+            "entities": {
+              "description": "preferred singular term for entities"
+            }
+          }
+        },
+        "counting_validator": {
+          "description": "ID of counting validator",
+          "type": "string"
+        },
+        "ui_schema": {
+          "description": "ID of ui_schema",
+          "type": "string"
+        },
+        "deactivate_download": {
+          "description": "Deactivates download button",
+          "type": "boolean"
         }
-      }
+      },
+      "required": [
+        "library_name"
+      ]
     }
   ]
 }

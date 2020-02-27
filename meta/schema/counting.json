@@ -1,5 +1,5 @@
 {
-  "$id": "/dcic/signature-commons-schema/v5/meta/counting/sigcom.json",
+  "$id": "/dcic/signature-commons-schema/v5/meta/schema/counting.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Metadata describing a chart or a count stat for the landing page of Signature Commons",
   "allOf": [

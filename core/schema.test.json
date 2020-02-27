@@ -7,23 +7,29 @@
       "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
       "data": {
         "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
-        "id": "aa22ee90-2c9d-402c-af69-adabb536e245",
+        "id": "302fbc16-4f94-47ad-847a-b1640db1f0d1",
         "meta": {
           "$validator": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
           "match": {
-            "${$validator}": "/@dcic/signature-commons-schema/(v[0-9]+/)?core/library.json"
+            "${$validator}": "/dcic/signature-commons-schema/(v[0-9]+/)?core/dataset.json",
+            "${dataset}": "enrichr_geneset"
           },
           "properties": {
             "Image": {
               "visibility": 1,
-              "type": "img",
-              "alt": "${meta['Library_name']}",
-              "src": "${PREFIX}/static/images/default-black.png"
+              "type": "header-img",
+              "src": "${PREFIX}/static/images/enrichr.png",
+              "alt": "Enrichr"
             },
-            "Library": {
+            "Libraries": {
               "visibility": 1,
               "type": "text",
-              "text": "${meta['Library_name']}"
+              "text": "128"
+            },
+            "Signatures": {
+              "visibility": 1,
+              "type": "text",
+              "text": "234846"
             }
           }
         }
@@ -148,7 +154,12 @@
         "meta": {
           "$validator": "/dcic/signature-commons-schema/v5/meta/schema/landing-ui.json",
           "admin": true,
-          "content": {}
+          "content": {
+            "resource_from_library": [
+              "some_important_field"
+            ],
+            "library_name": "Use_this_field"
+          }
         }
       }
     },

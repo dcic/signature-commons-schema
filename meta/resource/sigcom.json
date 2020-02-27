@@ -23,6 +23,14 @@
         "Description": {
           "description": "A description of the resource",
           "type": "string"
+        },
+        "icon": {
+          "description": "Path to the favicon",
+          "type": "string"
+        },
+        "$hidden": {
+          "description": "Tells the UI to hide this resource",
+          "type": "string"
         }
       },
       "required": [

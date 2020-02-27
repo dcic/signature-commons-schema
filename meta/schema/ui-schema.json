@@ -26,12 +26,32 @@
                       "description": "The field type",
                       "type": "string",
                       "enum": [
-                        "header-img", "img", "text", "text-default", "object"
+                        "header-img", "img", "title", "subtitle", "display", "text", "array", "object", "component", "score", "description", "text-default"
                       ]
                     },
                     "visibility": {
-                      "description": "The visibility of the field (0: hidden, 1: usually visible, 2: always visible)",
+                      "description": "The visibility of the field (0: hidden, 1: usually visible, 2: always visible) default: 0",
                       "type": "integer"
+                    },
+                    "priority": {
+                      "description": "The priority of the property",
+                      "type": "integer"
+                    },
+                    "href": {
+                      "description": "Hyperlink for the field",
+                      "type": "string"
+                    },
+                    "icon": {
+                      "description": "MDIcon to use",
+                      "type": "string"
+                    },
+                    "field": {
+                      "description": "Field to use. This is used for objects and lists. We first extract this field from the metadata file before going deep via text",
+                      "type": "string"
+                    },
+                    "clickable": {
+                      "description": "If the field is clickable (default is true)",
+                      "type": "boolean"
                     },
                     "condition": {
                       "type": "object",
@@ -62,12 +82,12 @@
               "oneOf": [
                 {
                   "type": "object",
-                  "description": "Image field",
+                  "description": "Header image",
                   "properties": {
                     "type": {
                       "description": "The field type",
                       "type": "string",
-                      "enum": [ "header-img" ]
+                      "enum": [ "header-img", "img" ]
                     },
                     "src": {
                       "description": "The image source url",
@@ -77,30 +97,122 @@
                       "description": "The image alt description",
                       "type": "string"
                     }
-                  }
+                  },
+                  "required": [
+                    "src",
+                    "type"
+                  ]
                 },
                 {
                   "type": "object",
-                  "description": "Image field",
+                  "description": "Place a component",
                   "properties": {
                     "type": {
                       "description": "The field type",
                       "type": "string",
-                      "enum": [ "img" ]
+                      "enum": [ "component" ]
                     },
-                    "src": {
-                      "description": "The image source url",
+                    "text": {
+                      "description": "The component to be imported",
                       "type": "string"
                     },
-                    "alt": {
-                      "description": "The image alt description",
-                      "type": "string"
+                    "props": {
+                      "description": "Props to the component",
+                      "type": "object",
+                      "patternProperties": {
+                        ".*": {
+                          "description": "props definition",
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "description": "type of the props",
+                              "type": "string",
+                              "enum": ["string", "boolean", "object"]
+                            },
+                            "text": {
+                              "description": "Text to pass as props",
+                              "type": "string"
+                            },
+                            "field": {
+                              "description": "Field to pass as props (for objects)",
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "location": {
+                      "description": "location of the component",
+                      "type": "string",
+                      "enum": ["page", "list", "side", "chip"]
                     }
-                  }
+                  },
+                  "required": [
+                    "text",
+                    "location",
+                    "type"
+                  ]
                 },
                 {
                   "type": "object",
-                  "description": "Text field",
+                  "description": "Display this as a title",
+                  "properties": {
+                    "type": {
+                      "description": "The field type",
+                      "type": "string",
+                      "enum": [ "title" ]
+                    },
+                    "text": {
+                      "description": "The text to be shown",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "description": "Display these as subtitles. If type is display, it will be shown as <Property Name>: <text>",
+                  "properties": {
+                    "type": {
+                      "description": "The field type",
+                      "type": "string",
+                      "enum": [ "subtitle", "display"  ]
+                    },
+                    "text": {
+                      "description": "The text to be shown",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "description": "Display these as tooltips",
+                  "properties": {
+                    "type": {
+                      "description": "The field type",
+                      "type": "string",
+                      "enum": [ "description" ]
+                    },
+                    "text": {
+                      "description": "The text to be shown",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "description": "Display this as a chip",
                   "properties": {
                     "type": {
                       "description": "The field type",
@@ -111,7 +223,57 @@
                       "description": "The text to be shown",
                       "type": "string"
                     }
-                  }
+                  },
+                  "required": [
+                    "text",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "description": "Display this as list of chips",
+                  "properties": {
+                    "type": {
+                      "description": "The field type",
+                      "type": "string",
+                      "enum": [ "object", "array" ]
+                    },
+                    "field": {
+                      "description": "Field to mine the text",
+                      "type": "string"
+                    },
+                    "text": {
+                      "description": "The text to be shown",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "field",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "description": "Sortable scores",
+                  "properties": {
+                    "type": {
+                      "description": "The field type",
+                      "type": "string",
+                      "enum": [ "score" ]
+                    },
+                    "field": {
+                      "description": "Field to sort it",
+                      "type": "string"
+                    },
+                    "text": {
+                      "description": "The text to be shown (typically same as field but with ${field}",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "type"
+                  ]
                 },
                 {
                   "type": "object",
@@ -126,26 +288,11 @@
                       "description": "The text to be shown",
                       "type": "string"
                     }
-                  }
-                },
-                {
-                  "type": "object",
-                  "description": "Object field",
-                  "properties": {
-                    "type": {
-                      "description": "The field type",
-                      "type": "string",
-                      "enum": [ "object" ]
-                    },
-                    "text": {
-                      "description": "The text to be shown",
-                      "type": "string"
-                    },
-                    "subfield": {
-                      "description": "The text to be shown in the subfield",
-                      "type": "string"
-                    }
-                  }
+                  },
+                  "required": [
+                    "text",
+                    "type"
+                  ]
                 }
               ]
             }

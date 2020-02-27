@@ -1,0 +1,16 @@
+{
+  "$id": "/dcic/signature-commons-schema/v5/meta/resource/dats.json",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Entity metadata as described by dats",
+  "allOf": [
+    {
+      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
+    },
+    {
+      "anyOf": [
+          {"$ref" : "https://w3id.org/dats/schema/data_repository_schema.json"},
+          {"$ref" : "https://w3id.org/dats/schema/organization_schema.json"}
+      ]
+    }
+  ]
+}

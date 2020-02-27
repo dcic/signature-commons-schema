@@ -1,0 +1,327 @@
+{
+  "$validator": "/dcic/signature-commons-schema/v5/core/examples.json",
+  "tests": [
+    {
+      "name": "DATS (Valid)",
+      "valid": true,
+      "schema": "/dcic/signature-commons-schema/v5/core/library.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/v5/core/library.json",
+        "id": "d725cc04-6064-4ec2-af3d-fc9310404465",
+        "dataset": "LDS-1482_1483_1372_1484",
+        "dataset_type": "geneset_library",
+        "meta": {
+          "$validator": "/dcic/signature-commons-schema/v5/meta/library/dats.json",
+          "data": {
+            "@type": "Dataset",
+            "dates": [
+              {
+                "date": "2016-03-06",
+                "type": {
+                  "value": "release date"
+                }
+              }
+            ],
+            "title": "L1000 Dataset -small molecule, CRISPR perturbagens- LINCS Phase 2 (March 2017)",
+            "types": [
+              {
+                "method": {
+                  "value": "Multiplex bead assay",
+                  "valueIRI": "http://purl.obolibrary.org/obo/ERO_0000637"
+                },
+                "platform": {
+                  "value": "",
+                  "valueIRI": ""
+                },
+                "instrument": {
+                  "value": "Array scanner",
+                  "valueIRI": "http://purl.obolibrary.org/obo/OBI_0400104"
+                },
+                "information": {
+                  "value": "Transcription profiling",
+                  "valueIRI": "http://purl.obolibrary.org/obo/OBI_0000424"
+                }
+              }
+            ],
+            "hasPart": [
+              {
+                "@type": "Dataset",
+                "title": "Processed raw dataset",
+                "types": [
+                  {
+                    "method": {
+                      "value": "Multiplex bead assay",
+                      "valueIRI": "http://purl.obolibrary.org/obo/ERO_0000637"
+                    },
+                    "version": {
+                      "value": "1.0"
+                    },
+                    "platform": {
+                      "value": "",
+                      "valueIRI": ""
+                    },
+                    "instrument": {
+                      "value": "Array scanner",
+                      "valueIRI": "http://purl.obolibrary.org/obo/OBI_0400104"
+                    },
+                    "description": {
+                      "value": "Data level 2"
+                    },
+                    "information": {
+                      "value": "Transcription profiling",
+                      "valueIRI": "http://purl.obolibrary.org/obo/OBI_0000424"
+                    }
+                  }
+                ],
+                "creators": [
+                  {
+                    "@type": "Person",
+                    "fullName": "Todd Golub",
+                    "affiliations": [
+                      {
+                        "name": "Broad Institute, INC",
+                        "@type": "Organization"
+                      }
+                    ]
+                  }
+                ],
+                "storedIn": {
+                  "name": "LINCS Data Portal",
+                  "@type": "DataRepository"
+                },
+                "identifier": {
+                  "@type": "Identifier",
+                  "identifier": "LDS-1482"
+                },
+                "distributions": [
+                  {
+                    "@type": "DatasetDistribution",
+                    "access": {
+                      "@type": "Access",
+                      "accessURL": "http://lincsportal.ccs.miami.edu/dcic/api/download?path=LINCS_Data/BroadT_LINCS&file=LDS-1482.tar.gz",
+                      "landingPage": "http://lincsportal.ccs.miami.edu/datasets/view/LDS-1372"
+                    }
+                  }
+                ]
+              },
+              {
+                "@type": "Dataset",
+                "title": "Normalized dataset",
+                "types": [
+                  {
+                    "method": {
+                      "value": "Multiplex bead assay",
+                      "valueIRI": "http://purl.obolibrary.org/obo/ERO_0000637"
+                    },
+                    "version": {
+                      "value": "1.0"
+                    },
+                    "platform": {
+                      "value": "",
+                      "valueIRI": ""
+                    },
+                    "instrument": {
+                      "value": "Array scanner",
+                      "valueIRI": "http://purl.obolibrary.org/obo/OBI_0400104"
+                    },
+                    "description": {
+                      "value": "Data level 3"
+                    },
+                    "information": {
+                      "value": "Transcription profiling",
+                      "valueIRI": "http://purl.obolibrary.org/obo/OBI_0000424"
+                    }
+                  }
+                ],
+                "creators": [
+                  {
+                    "@type": "Person",
+                    "fullName": "Todd Golub",
+                    "affiliations": [
+                      {
+                        "name": "Broad Institute, INC",
+                        "@type": "Organization"
+                      }
+                    ]
+                  }
+                ],
+                "storedIn": {
+                  "name": "LINCS Data Portal",
+                  "@type": "DataRepository"
+                },
+                "identifier": {
+                  "@type": "Identifier",
+                  "identifier": "LDS-1483"
+                },
+                "distributions": [
+                  {
+                    "@type": "DatasetDistribution",
+                    "access": {
+                      "@type": "Access",
+                      "accessURL": "http://lincsportal.ccs.miami.edu/dcic/api/download?path=LINCS_Data/BroadT_LINCS&file=LDS-1483.tar.gz",
+                      "landingPage": "http://lincsportal.ccs.miami.edu/datasets/view/LDS-1372"
+                    }
+                  }
+                ]
+              },
+              {
+                "@type": "Dataset",
+                "title": "Signature dataset",
+                "types": [
+                  {
+                    "method": {
+                      "value": "Multiplex bead assay",
+                      "valueIRI": "http://purl.obolibrary.org/obo/ERO_0000637"
+                    },
+                    "version": {
+                      "value": "1.0"
+                    },
+                    "platform": {
+                      "value": "",
+                      "valueIRI": ""
+                    },
+                    "instrument": {
+                      "value": "Array scanner",
+                      "valueIRI": "http://purl.obolibrary.org/obo/OBI_0400104"
+                    },
+                    "description": {
+                      "value": "Data level 4"
+                    },
+                    "information": {
+                      "value": "Transcription profiling",
+                      "valueIRI": "http://purl.obolibrary.org/obo/OBI_0000424"
+                    }
+                  }
+                ],
+                "creators": [
+                  {
+                    "@type": "Person",
+                    "fullName": "Todd Golub",
+                    "affiliations": [
+                      {
+                        "name": "Broad Institute, INC",
+                        "@type": "Organization"
+                      }
+                    ]
+                  }
+                ],
+                "storedIn": {
+                  "name": "LINCS Data Portal",
+                  "@type": "DataRepository"
+                },
+                "identifier": {
+                  "@type": "Identifier",
+                  "identifier": "LDS-1372"
+                },
+                "distributions": [
+                  {
+                    "@type": "DatasetDistribution",
+                    "access": {
+                      "@type": "Access",
+                      "accessURL": "http://lincsportal.ccs.miami.edu/dcic/api/download?path=LINCS_Data/BroadT_LINCS&file=LDS-1372.tar.gz",
+                      "landingPage": "http://lincsportal.ccs.miami.edu/datasets/view/LDS-1372"
+                    }
+                  }
+                ]
+              },
+              {
+                "@type": "Dataset",
+                "title": "Signature dataset",
+                "types": [
+                  {
+                    "method": {
+                      "value": "Multiplex bead assay",
+                      "valueIRI": "http://purl.obolibrary.org/obo/ERO_0000637"
+                    },
+                    "version": {
+                      "value": "1.0"
+                    },
+                    "platform": {
+                      "value": "",
+                      "valueIRI": ""
+                    },
+                    "instrument": {
+                      "value": "Array scanner",
+                      "valueIRI": "http://purl.obolibrary.org/obo/OBI_0400104"
+                    },
+                    "description": {
+                      "value": "Data level 5"
+                    },
+                    "information": {
+                      "value": "Transcription profiling",
+                      "valueIRI": "http://purl.obolibrary.org/obo/OBI_0000424"
+                    }
+                  }
+                ],
+                "creators": [
+                  {
+                    "@type": "Person",
+                    "fullName": "Todd Golub",
+                    "affiliations": [
+                      {
+                        "name": "Broad Institute, INC",
+                        "@type": "Organization"
+                      }
+                    ]
+                  }
+                ],
+                "storedIn": {
+                  "name": "LINCS Data Portal",
+                  "@type": "DataRepository"
+                },
+                "identifier": {
+                  "@type": "Identifier",
+                  "identifier": "LDS-1484"
+                },
+                "distributions": [
+                  {
+                    "@type": "DatasetDistribution",
+                    "access": {
+                      "@type": "Access",
+                      "accessURL": "http://lincsportal.ccs.miami.edu/dcic/api/download?path=LINCS_Data/BroadT_LINCS&file=LDS-1484.tar.gz",
+                      "landingPage": "http://lincsportal.ccs.miami.edu/datasets/view/LDS-1372"
+                    }
+                  }
+                ]
+              }
+            ],
+            "creators": [
+              {
+                "@type": "Person",
+                "fullName": "Todd Golub",
+                "affiliations": [
+                  {
+                    "name": "Broad Institute, INC",
+                    "@type": "Organization",
+                    "extraProperties": [
+                      {
+                        "category": "IconPath",
+                        "values": [
+                          "static/images/lincs/CMap.png"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "storedIn": {
+              "name": "LINCS Data Portal",
+              "@type": "DataRepository"
+            },
+            "extraProperties": [
+              {
+                "category": "ShortTitle",
+                "values": [
+                  "Some short title here"
+                ]
+              }
+            ],
+            "description": "This dataset contains datasets that are transformations of data derived from the original dataset. See LINCS data levels for more information."
+          }
+        },
+        "signature_keys": []
+      }
+    }
+  ]
+}

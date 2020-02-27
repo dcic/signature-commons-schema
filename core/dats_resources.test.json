@@ -1,0 +1,47 @@
+{
+  "$validator": "/dcic/signature-commons-schema/v5/core/examples.json",
+  "tests": [
+    {
+      "name": "DATS Resource (Valid)",
+      "valid": true,
+      "schema": "/dcic/signature-commons-schema/v5/core/resource.json",
+      "data": {
+        "$validator": "/dcic/signature-commons-schema/v5/core/resource.json",
+        "id": "d725cc04-6064-4ec2-af3d-fc9310404466",
+        "meta": {
+          "@type": "Dataset",
+          "name": "HMS LINCS",
+          "description": "The Harvard Medical School LINCS Center studies how normal and diseased human cells respond at the molecular level to perturbation by drugs, mutations, and the local environment.",
+          "publishers": [
+            {
+              "@type": "Person",
+              "fullName": "Peter Sorger, PhD",
+              "affiliations": [
+                {
+                  "name": "Harvard Medical School",
+                  "@type": "Organization"
+                }
+              ]
+            }
+          ],
+          "access": [
+            {
+              "@type": "Access",
+              "accessURL": "http://lincsportal.ccs.miami.edu/dcic/api/download?path=LINCS_Data/BroadT_LINCS&file=LDS-1482.tar.gz",
+              "landingPage": "http://lincsportal.ccs.miami.edu/datasets/view/LDS-1372"
+            }
+          ],
+          "extraProperties": [
+            {
+              "category": "IconPath",
+              "values": [
+                "static/images/lincs/CMap.png"
+              ]
+            }
+          ],
+          "$validator": "/dcic/signature-commons-schema/v5/meta/resource/dats.json"
+        }
+      }
+    }
+  ]
+}

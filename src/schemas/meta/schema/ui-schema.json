@@ -266,7 +266,7 @@
                       "type": "string"
                     },
                     "text": {
-                      "description": "The text to be shown (typically same as field but with ${field}",
+                      "description": "The text to be shown (typically same as field but with ${'${field}'}",
                       "type": "string"
                     }
                   },

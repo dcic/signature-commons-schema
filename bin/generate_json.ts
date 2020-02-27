@@ -2,7 +2,8 @@ import * as glob from 'glob'
 import * as path from 'path'
 import * as fs from 'fs'
 import * as mkdirp from 'mkdirp'
-import { apiVersion } from '../package.json'
+
+const { apiVersion } = require('root-require')('package.json')
 
 export function makeTemplate(
   templateString: string,
@@ -22,29 +23,29 @@ export function makeTemplate(
   for(const schema_file of glob.sync(
     path.join(
       __dirname,
-      '../src/schemas/**/*.json',
+      '../src/**/*.json',
     ),
     {
       ignore: [
-        '**/bin/**',
-        '**/dist/**',
-        '**/node_modules/**',
-        '**/package-lock.json',
-        '**/package.json',
-        '**/tsconfig.json',
-        '**/tslint.json',
+        '**/dist/**'
       ],
     }
   )) {
     try {
-      const dir = path.relative('src/schemas', path.dirname(schema_file))
+      const dir = path.join('dist',
+        path.relative('.',
+          path.dirname(
+            schema_file
+              .replace('src/schemas', '..')
+              .replace('src', '.')
+          )
+        )
+      )
+      const filename = path.join(dir, path.basename(schema_file))
 
       mkdirp.sync(dir)
       fs.writeFileSync(
-        path.join(
-          dir,
-          path.basename(schema_file)
-        ),
+        filename,
         makeTemplate(
           fs.readFileSync(schema_file).toString(),
           { API_VERSION: apiVersion }

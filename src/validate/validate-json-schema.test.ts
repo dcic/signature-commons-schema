@@ -1,8 +1,7 @@
 import * as assert from 'assert'
-import { validate, init_ajv } from '.'
+import { init_ajv } from '.'
 import * as glob from 'glob'
 import * as path from 'path'
-import debug from '../util/debug'
 
 describe('util', () => {
   describe('validate', () => {
@@ -15,7 +14,7 @@ describe('util', () => {
         {
           ignore: [
             '**/node_modules/**',
-            '**/dist/**',
+            '**/src/**',
             '**/*.test.json',
             '**/package.json',
             '**/package-lock.json',

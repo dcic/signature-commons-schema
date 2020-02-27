@@ -1,5 +1,6 @@
 import fetch from 'node-fetch'
-import { apiVersion } from '../../package.json'
+
+const { apiVersion } = require('root-require')('package.json')
 
 const cache: {
   [key: string]: object

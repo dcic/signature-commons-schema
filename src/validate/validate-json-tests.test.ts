@@ -15,7 +15,7 @@ describe('util', () => {
         {
           ignore: [
             '**/node_modules/**',
-            '**/dist/**',
+            '**/src/**',
           ],
         }
       )) {

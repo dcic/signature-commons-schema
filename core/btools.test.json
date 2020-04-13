@@ -1,0 +1,107 @@
+{
+    "$validator": "/dcic/signature-commons-schema/v5/core/examples.json",
+    "tests": [
+        {
+            "name": "Library (Valid)",
+            "valid": true,
+            "schema": "/dcic/signature-commons-schema/v5/core/library.json",
+            "data": {
+                "$validator": "/dcic/signature-commons-schema/v5/core/library.json",
+                "id": "2d13f0f5-c01f-4a74-8e50-cf2247f417f1",
+                "dataset": "journal",
+                "dataset_type": "rank_matrix",
+                "meta": {
+                    "Journal_Title": "3 Biotech",
+                    "ISSN": "2190-5738",
+                    "publisher": "Springer",
+                    "icon": "",
+                    "$validator": "https://raw.githubusercontent.com/MaayanLab/btools-ui/toolstory/validators/btools_journal.json"
+                }
+            }
+        },
+        {
+            "name": "Tools (Valid)",
+            "valid": true,
+            "schema": "/dcic/signature-commons-schema/v5/core/signature.json",
+            "data": {
+                "$validator": "/dcic/signature-commons-schema/v5/core/signature.json",
+                "id": "d666a958-3c20-4d31-a3af-57a108822ff5",
+                "library": "b9cfa832-b0fd-4cdb-b8aa-d303312dda2f",
+                "meta": {
+                    "tool_homepage_url": "https://github.com/ridgelab/ExtRamp",
+                    "Tool_Name": "ExtRamp",
+                    "Tool_Description": "a novel algorithm for extracting the ramp sequence based on the tRNA adaptation index or relative codon adaptiveness.",
+                    "PMID": [
+                        30649455
+                    ],
+                    "DOI": "10.1093/nar/gky1193",
+                    "Article_Title": "ExtRamp a novel algorithm for extracting the ramp sequence based on the tRNA adaptation index or relative codon adaptiveness.",
+                    "Abstract": "Different species genes and locations within genes use different codons to finetune gene expression. Within genes the ramp sequence assists in ribosome spacing and decreases downstream collisions by incorporating slowlytranslated codons at the beginning of a gene. Although previously reported as occurring in some species no previous attempt at extracting the ramp sequence from specific genes has been published. We present ExtRamp a software package that quickly extracts ramp sequences from any species using the tRNA adaptation index or relative codon adaptiveness. Different filters facilitate the analysis of codon efficiency and enable identification of genes with a ramp sequence. We validate the existence of a ramp sequence in most species by running ExtRamp on 229 742 339 genes across 23 428 species. We evaluate differences in reported ramp sequences when we use different parameters. Using the strictest ramp sequence cutoff we show that across most taxonomic groups ramp sequences are approximately 2040 codons long and occur in about 10 of gene sequences. We also show that in Drosophila melanogaster as gene expression increases a higher proportion of genes have ramp sequences. We provide a framework for performing this analysis on other species. ExtRamp is freely available at https//github.com/ridgelab/ExtRamp.",
+                    "Publication_Type": [
+                        "Journal Article",
+                        "Research Support, Non-U.S. Gov't"
+                    ],
+                    "Chemical_List": [
+                        {
+                            "RegistryNumber": "0",
+                            "NameOfSubstance": "Codon"
+                        },
+                        {
+                            "RegistryNumber": "9014-25-9",
+                            "NameOfSubstance": "RNA, Transfer"
+                        }
+                    ],
+                    "Article_Language": [
+                        "eng"
+                    ],
+                    "Last_Updated": "2019-01-17",
+                    "Added_On": "2019-01-17",
+                    "Published_On": "2019-01-15",
+                    "Journal": "Nucleic Acids Research",
+                    "ISSN": "1362-4962",
+                    "Journal_Title": "Nucleic acids research",
+                    "Altmetric_Score": 0.75,
+                    "Readers_Count": 11.0,
+                    "Readers_in_Mendeley": 11.0,
+                    "Cited_By_Posts_Count": 2.0,
+                    "Twitter_accounts_that_tweeted_this_publication": 2.0,
+                    "Scientists_who_mentioned_the_publication_on_Twitter": 2.0,
+                    "Mentions_in_social_media": 2.0,
+                    "Author_Information": [
+                        {
+                            "AffiliationInfo": [
+                                {
+                                    "Affiliation": "Department of Biology, Brigham Young University, Provo, UT 84602, USA."
+                                }
+                            ],
+                            "LastName": "Miller",
+                            "ForeName": "Justin B",
+                            "Initials": "JB"
+                        },
+                        {
+                            "AffiliationInfo": [
+                                {
+                                    "Affiliation": "Department of Biology, Brigham Young University, Provo, UT 84602, USA."
+                                }
+                            ],
+                            "LastName": "Brase",
+                            "ForeName": "Logan R",
+                            "Initials": "LR"
+                        },
+                        {
+                            "AffiliationInfo": [
+                                {
+                                    "Affiliation": "Department of Biology, Brigham Young University, Provo, UT 84602, USA."
+                                }
+                            ],
+                            "LastName": "Ridge",
+                            "ForeName": "Perry G",
+                            "Initials": "PG"
+                        }
+                    ],
+                    "$validator": "https://raw.githubusercontent.com/MaayanLab/btools-ui/toolstory/validators/btools_tools.json"
+                }
+            }
+        }
+    ]
+}

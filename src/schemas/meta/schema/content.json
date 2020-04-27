@@ -61,44 +61,20 @@
           ]
         },
         "geneset_terms": {
-          "description": "geneset terms for signature search",
-          "type": "array",
-          "items": [
-            {
-              "type": "string",
-              "description": "Search Term"
-            }
-          ]
+          "description": "\\n delimited geneset terms for signature search",
+          "type": "string"
         },
         "weighted_geneset_terms": {
-          "description": "weighted geneset terms for signature search",
-          "type": "array",
-          "items": [
-            {
-              "type": "string",
-              "description": "Search Term"
-            }
-          ]
+          "description": "\\n delimited weighted geneset terms for signature search",
+          "type": "string"
         },
         "up_set_terms": {
-          "description": "up geneset terms for signature search",
-          "type": "array",
-          "items": [
-            {
-              "type": "string",
-              "description": "Search Term"
-            }
-          ]
+          "description": "\\n delimited up geneset terms for signature search",
+          "type": "string"
         },
         "down_set_terms": {
-          "description": "down geneset terms for signature search",
-          "type": "array",
-          "items": [
-            {
-              "type": "string",
-              "description": "Search Term"
-            }
-          ]
+          "description": "\\n delimited down geneset terms for signature search",
+          "type": "string"
         },
         "bar-chart": {
           "description": "Bar chart changes",

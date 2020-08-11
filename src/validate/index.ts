@@ -136,9 +136,13 @@ export async function get_validator(validator: string | object | Validator): Pro
   }
 
   if(typeof validator !== 'function') {
+    let error = 'Could not resolve validator of type ' + typeof validator
+    if (typeof validator === "string"){
+      error = 'Could not resolve validator ' + validator
+    }
     throw {
       errors: [
-        'Could not resolve validator of type ' + typeof validator
+        error
       ]
     } as Ajv.ErrorParameters
   }
@@ -157,17 +161,17 @@ export async function get_validator(validator: string | object | Validator): Pro
  */
 export async function validate<T>(data: Partial<T>, validator: any): Promise<T> {
   debug('validate(' + JSON.stringify(data) + ', ' + JSON.stringify(validator) + ')')
-
   // Setup context
   if(this.ajv === undefined) {
     this.ajv = init_ajv()
   }
   this.currentNode = JSON.stringify([data, validator])
-
+  
   // Obtain validator function
   const validator_func = await get_validator.call(this,
     validator || draft4metaSchema
   )
+
   // Throw any errors
   if(this.ajv.errors) throw this.ajv.errors
 

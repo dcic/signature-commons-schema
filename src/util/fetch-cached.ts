@@ -1,5 +1,6 @@
 import fetch from 'node-fetch'
 
+const requireFromWeb = require('require-from-web')
 const { apiVersion } = require('root-require')('package.json')
 
 const cache: {
@@ -30,7 +31,12 @@ export async function fetch_cached<T extends {} = {}>(url: string): Promise<T> {
 
   if(cache[url] === undefined) {
     // Fetch other urls as actual urls
-    cache[url] = await (await fetch(url)).json()
+    if (url.endsWith('.js')){
+      const mod = await requireFromWeb(url)
+      cache[url] = {default: mod}
+    } else{
+      cache[url] = await (await fetch(url)).json()
+    }
   }
 
   return cache[url] as T

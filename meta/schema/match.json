@@ -1,5 +1,5 @@
 {
-  "$id": "/dcic/signature-commons-schema/v5/meta/schemas/match.json",
+  "$id": "/dcic/signature-commons-schema/v6/meta/schemas/match.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "A object representing a matching rule",
   "type": "object",

@@ -1,15 +1,15 @@
 {
-  "$validator": "/dcic/signature-commons-schema/v5/core/examples.json",
+  "$validator": "/dcic/signature-commons-schema/v6/core/examples.json",
   "tests": [
     {
       "name": "Entity (Valid)",
       "valid": true,
-      "schema": "/dcic/signature-commons-schema/v5/core/entity.json",
+      "schema": "/dcic/signature-commons-schema/v6/core/entity.json",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v5/core/entity.json",
+        "$validator": "/dcic/signature-commons-schema/v6/core/entity.json",
         "id": "1438c47f-fa57-4cc2-9c8b-5b7b8b3edb0e",
         "meta": {
-          "$validator": "/dcic/signature-commons-schema/v5/meta/entity/sigcom.json",
+          "$validator": "/dcic/signature-commons-schema/v6/meta/entity/sigcom.json",
           "Name": "STAT3",
           "Synonyms": [
             "STAT3",
@@ -30,12 +30,12 @@
     {
       "name": "Entity (Invalid)",
       "valid": false,
-      "schema": "/dcic/signature-commons-schema/v5/core/entity.json",
+      "schema": "/dcic/signature-commons-schema/v6/core/entity.json",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v5/core/entity.json",
+        "$validator": "/dcic/signature-commons-schema/v6/core/entity.json",
         "id": "1438c47f-fa57-4cc2-9c8b-5b7b8b3edb0e",
         "meta": {
-          "$validator": "/dcic/signature-commons-schema/v5/meta/entity/sigcom.json",
+          "$validator": "/dcic/signature-commons-schema/v6/meta/entity/sigcom.json",
           "al_iases": [
             "STAT3",
             "NCBI:6774",

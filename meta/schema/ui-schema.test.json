@@ -1,15 +1,15 @@
 {
-  "$validator": "/dcic/signature-commons-schema/v5/core/examples.json",
+  "$validator": "/dcic/signature-commons-schema/v6/core/examples.json",
   "tests": [
     {
       "name": "Schema (Valid)",
       "valid": true,
-      "schema": "/dcic/signature-commons-schema/v5/core/schema.json",
+      "schema": "/dcic/signature-commons-schema/v6/core/schema.json",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
+        "$validator": "/dcic/signature-commons-schema/v6/core/schema.json",
         "id": "302fbc16-4f94-47ad-847a-b1640db1f0d1",
         "meta": {
-          "$validator": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
+          "$validator": "/dcic/signature-commons-schema/v6/meta/schema/ui-schema.json",
           "match": {
             "${$validator}": "/@?dcic/signature-commons-schema/(v[0-9]+/)?core/library.json"
           },

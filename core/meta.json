@@ -1,5 +1,5 @@
 {
-  "$id": "/dcic/signature-commons-schema/v5/core/meta.json",
+  "$id": "/dcic/signature-commons-schema/v6/core/meta.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "$validator": {

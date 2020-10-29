@@ -1,0 +1,34 @@
+{
+    "$validator": "/dcic/signature-commons-schema/v6/core/examples.json",
+    "tests": [
+      {
+        "name": "Icon Schema (Valid)",
+        "valid": true,
+        "schema": "/dcic/signature-commons-schema/v6/core/schema.json",
+        "data": {
+            "$validator": "/dcic/signature-commons-schema/v5/core/schema.json",
+            "id": "72228a58-2aaa-438c-a0cf-ef255c6c1af6",
+            "meta": {
+              "match": {
+                "${$validator}": "/@?dcic/signature-commons-schema/(v[0-9]+/)?core/library.json",
+                "${dataset}": "enrichr_geneset",
+                "${meta.Library_name}": " metadata$"
+              },
+              "$validator": "/dcic/signature-commons-schema/v5/meta/schema/ui-schema.json",
+              "properties": {
+                "Image": {
+                  "alt": "${meta.Library_name}",
+                  "src": "${meta.Icon}",
+                  "icon": true,
+                  "name": true,
+                  "text": "${meta.Library_name}",
+                  "type": "img",
+                  "priority": 1,
+                  "visibility": 1
+                }
+              }
+            }
+          }
+      }
+    ]
+  }

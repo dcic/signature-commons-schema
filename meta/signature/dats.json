@@ -1,10 +1,10 @@
 {
-  "$id": "/dcic/signature-commons-schema/v5/meta/signature/dats.json",
+  "$id": "/dcic/signature-commons-schema/v6/meta/signature/dats.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Signature metadata as described by dats",
   "allOf": [
     {
-      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
+      "$ref": "/dcic/signature-commons-schema/v6/core/meta.json"
     },
     {
       "$ref": "https://w3id.org/dats/schema/study_schema.json"

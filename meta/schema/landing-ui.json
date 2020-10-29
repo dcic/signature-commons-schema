@@ -1,10 +1,10 @@
 {
-  "$id": "/dcic/signature-commons-schema/v5/meta/schema/landing-ui.json",
+  "$id": "/dcic/signature-commons-schema/v6/meta/schema/landing-ui.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Metadata describing a signature commons resource",
   "allOf": [
     {
-      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
+      "$ref": "/dcic/signature-commons-schema/v6/core/meta.json"
     },
     {
       "oneOf": [
@@ -17,7 +17,7 @@
               "description": "use these changes in the landing page"
             },
             "content": {
-              "$ref": "/dcic/signature-commons-schema/v5/meta/schema/content.json",
+              "$ref": "/dcic/signature-commons-schema/v6/meta/schema/content.json",
               "description": "Disease perturbations"
             }
           },
@@ -35,7 +35,7 @@
               "description": "use these changes in the admin page"
             },
             "content": {
-              "$ref": "/dcic/signature-commons-schema/v5/meta/schema/content.json",
+              "$ref": "/dcic/signature-commons-schema/v6/meta/schema/content.json",
               "description": "Disease perturbations"
             }
           },

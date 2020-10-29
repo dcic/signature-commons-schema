@@ -1,10 +1,10 @@
 {
-  "$id": "/dcic/signature-commons-schema/v5/meta/resource/sigcom.json",
+  "$id": "/dcic/signature-commons-schema/v6/meta/resource/sigcom.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Metadata describing a signature commons resource",
   "allOf": [
     {
-      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
+      "$ref": "/dcic/signature-commons-schema/v6/core/meta.json"
     },
     {
       "properties": {

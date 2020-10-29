@@ -1,16 +1,16 @@
 {
-  "$id": "/dcic/signature-commons-schema/v5/meta/schemas/ui-schema.json",
+  "$id": "/dcic/signature-commons-schema/v6/meta/schemas/ui-schema.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Metadata describing a signature commons ui schema",
   "allOf": [
     {
-      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
+      "$ref": "/dcic/signature-commons-schema/v6/core/meta.json"
     },
     {
       "properties": {
         "match": {
           "description": "The partial rules to match a data instance `${variable}` can be used for variable substitution",
-          "$ref": "/dcic/signature-commons-schema/v5/meta/schema/match.json"
+          "$ref": "/dcic/signature-commons-schema/v6/meta/schema/match.json"
         },
         "properties": {
           "description": "UI-defined properties for the given match",
@@ -56,7 +56,7 @@
                     "condition": {
                       "type": "object",
                       "description": "A mapping of conditions to compare",
-                      "$ref": "/dcic/signature-commons-schema/v5/meta/schema/match.json"
+                      "$ref": "/dcic/signature-commons-schema/v6/meta/schema/match.json"
                     },
                     "columnType": {
                       "type": "string",

@@ -1,10 +1,10 @@
 {
-  "$id": "/dcic/signature-commons-schema/v5/meta/entity/ilincs-compound.json",
+  "$id": "/dcic/signature-commons-schema/v6/meta/entity/ilincs-compound.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Compound metadata as described by http://www.ilincs.org/ilincs.json",
   "allOf": [
     {
-      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
+      "$ref": "/dcic/signature-commons-schema/v6/core/meta.json"
     },
     {
       "type": "object",

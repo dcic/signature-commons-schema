@@ -1,9 +1,9 @@
 {
-  "$id": "/dcic/signature-commons-schema/v5/meta/library/sigcom.json",
+  "$id": "/dcic/signature-commons-schema/v6/meta/library/sigcom.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
-      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
+      "$ref": "/dcic/signature-commons-schema/v6/core/meta.json"
     },
     {
       "properties": {

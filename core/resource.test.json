@@ -1,15 +1,15 @@
 {
-  "$validator": "/dcic/signature-commons-schema/v5/core/examples.json",
+  "$validator": "/dcic/signature-commons-schema/v6/core/examples.json",
   "tests": [
     {
       "name": "Resource (Valid)",
       "valid": true,
-      "schema": "/dcic/signature-commons-schema/v5/core/resource.json",
+      "schema": "/dcic/signature-commons-schema/v6/core/resource.json",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v5/core/resource.json",
+        "$validator": "/dcic/signature-commons-schema/v6/core/resource.json",
         "id": "80d4feee-97e5-49f7-9517-f8137024ac8d",
         "meta": {
-          "$validator": "/dcic/signature-commons-schema/v5/meta/resource/sigcom.json",
+          "$validator": "/dcic/signature-commons-schema/v6/meta/resource/sigcom.json",
           "Resource_Name": "CMAP",
           "PMID": "29195078",
           "URL": "https://clue.io",
@@ -20,12 +20,12 @@
     {
       "name": "Resource (Invalid)",
       "valid": false,
-      "schema": "/dcic/signature-commons-schema/v5/core/resource.json",
+      "schema": "/dcic/signature-commons-schema/v6/core/resource.json",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v5/core/resource.json",
+        "$validator": "/dcic/signature-commons-schema/v6/core/resource.json",
         "id": "80d4feee-97e5-49f7-9517-f8137024ac8d",
         "meta": {
-          "$validator": "/dcic/signature-commons-schema/v5/meta/resource/sigcom.json",
+          "$validator": "/dcic/signature-commons-schema/v6/meta/resource/sigcom.json",
           "PMID": "29195078",
           "URL": "https://clue.io",
           "Description": "(From the website) The Connectivity Map (CMap) at the Broad Institute is creating a genome-scale library of cellular signatures that catalogs transcriptional responses to chemical, genetic, and disease perturbation."

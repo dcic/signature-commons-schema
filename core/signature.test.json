@@ -1,16 +1,16 @@
 {
-  "$validator": "/dcic/signature-commons-schema/v5/core/examples.json",
+  "$validator": "/dcic/signature-commons-schema/v6/core/examples.json",
   "tests": [
     {
       "name": "Signature (Valid)",
       "valid": true,
-      "schema": "/dcic/signature-commons-schema/v5/core/signature.json",
+      "schema": "/dcic/signature-commons-schema/v6/core/signature.json",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v5/core/signature.json",
+        "$validator": "/dcic/signature-commons-schema/v6/core/signature.json",
         "id": "741281f8-b9bf-4586-8235-af293c2d23d6",
         "library": "0",
         "meta": {
-          "$validator": "/dcic/signature-commons-schema/v5/meta/signature/sigcom.json",
+          "$validator": "/dcic/signature-commons-schema/v6/meta/signature/sigcom.json",
           "Assay": "microarray",
           "Gene": [
             {
@@ -35,13 +35,13 @@
     {
       "name": "Signature Organism (Invalid)",
       "valid": true,
-      "schema": "/dcic/signature-commons-schema/v5/core/signature.json",
+      "schema": "/dcic/signature-commons-schema/v6/core/signature.json",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v5/core/signature.json",
+        "$validator": "/dcic/signature-commons-schema/v6/core/signature.json",
         "id": "741281f8-b9bf-4586-8235-af293c2d23d6",
         "library": "0",
         "meta": {
-          "$validator": "/dcic/signature-commons-schema/v5/meta/signature/sigcom.json",
+          "$validator": "/dcic/signature-commons-schema/v6/meta/signature/sigcom.json",
           "Assay": "microarray",
           "Gene": [
             {
@@ -66,11 +66,11 @@
     {
       "name": "Signature (Invalid)",
       "valid": false,
-      "schema": "/dcic/signature-commons-schema/v5/core/signature.json",
+      "schema": "/dcic/signature-commons-schema/v6/core/signature.json",
       "data": {
-        "$validator": "/dcic/signature-commons-schema/v5/core/signature.json",
+        "$validator": "/dcic/signature-commons-schema/v6/core/signature.json",
         "meta": {
-          "$validator": "/dcic/signature-commons-schema/v5/meta/signature/sigcom.json",
+          "$validator": "/dcic/signature-commons-schema/v6/meta/signature/sigcom.json",
           "Assay": []
         },
         "id": "741281f8-b9bf-4586-8235-af293c2d23d6"

@@ -1,10 +1,10 @@
 {
-  "$id": "/dcic/signature-commons-schema/v5/core/examples.json",
+  "$id": "/dcic/signature-commons-schema/v6/core/examples.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "The schema describing the examples for testing",
   "allOf": [
     {
-      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
+      "$ref": "/dcic/signature-commons-schema/v6/core/meta.json"
     },
     {
       "type": "object",

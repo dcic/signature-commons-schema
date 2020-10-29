@@ -1,10 +1,10 @@
 {
-  "$id": "/dcic/signature-commons-schema/v5/meta/signature/clue-io.json",
+  "$id": "/dcic/signature-commons-schema/v6/meta/signature/clue-io.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Signature metadata as described by https://api.clue.io/public/apis",
   "allOf": [
     {
-      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
+      "$ref": "/dcic/signature-commons-schema/v6/core/meta.json"
     },
     {
       "type": "object",

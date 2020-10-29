@@ -1,9 +1,9 @@
 {
-  "$id": "/dcic/signature-commons-schema/v5/core/entity.json",
+  "$id": "/dcic/signature-commons-schema/v6/core/entity.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "allOf": [
     {
-      "$ref": "/dcic/signature-commons-schema/v5/core/meta.json"
+      "$ref": "/dcic/signature-commons-schema/v6/core/meta.json"
     },
     {
       "type": "object",
@@ -13,7 +13,7 @@
           "description": "Globally unique identifier referring to this entity."
         },
         "meta": {
-          "$ref": "/dcic/signature-commons-schema/v5/core/meta.json",
+          "$ref": "/dcic/signature-commons-schema/v6/core/meta.json",
           "description": "Arbitrary validatable metadata describing the entity"
         },
         "signatures": {

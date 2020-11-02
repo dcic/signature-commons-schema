@@ -1,5 +1,5 @@
 {
-  "name": "@dcic/signature-commons-schema",
+  "name": "@maayanlab/signature-commons-schema",
   "version": "1.5.1",
   "apiVersion": "v6",
   "description": "JSON-Schema validators for signature commons entities",
@@ -7,6 +7,7 @@
     "signature-commons-schema": "dist/cli.js"
   },
   "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
     "access": "public"
   },
   "main": "dist/index.js",
@@ -27,14 +28,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dcic/signature-commons-schema.git"
+    "url": "git+https://github.com/maayanlab/signature-commons-schema.git"
   },
   "author": "Daniel J. B. Clarke <u8sand@gmail.com>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/dcic/signature-commons-schema/issues"
+    "url": "https://github.com/maayanlab/signature-commons-schema/issues"
   },
-  "homepage": "https://github.com/dcic/signature-commons-schema#readme",
+  "homepage": "https://github.com/maayanlab/signature-commons-schema#readme",
   "dependencies": {
     "@types/debug": "0.0.31",
     "@types/node-fetch": "^2.3.7",

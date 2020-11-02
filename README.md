@@ -1,4 +1,4 @@
-[![](https://img.shields.io/npm/v/@dcic/signature-commons-schema.svg)](https://www.npmjs.com/package/@dcic/signature-commons-schema) [![](https://img.shields.io/npm/l/@dcic/signature-commons-schema.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![](https://img.shields.io/npm/v/@maayanlab/signature-commons-schema.svg)](https://www.npmjs.com/package/@maayanlab/signature-commons-schema) [![](https://img.shields.io/npm/l/@maayanlab/signature-commons-schema.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
 # Signature Commons Schema
 
@@ -6,12 +6,12 @@ JSON-Schema validators for signature commons entities. Designed to allow one to 
 
 ## Installation
 ```bash
-npm install --save @dcic/signature-commons-schema
+npm install --save @maayanlab/signature-commons-schema
 ```
 
 ### Usage
 ```ts
-import { validate } from '@dcic/signature-commons-schema'
+import { validate } from '@maayanlab/signature-commons-schema'
 validate({your_object})
 ```
 
@@ -78,7 +78,7 @@ Meta here enforces the constraint of the `$validator` definition, which referenc
 
 We can validate that this is true by grabbing the `$validator` file and validating the json itself.
 ```ts
-import {validate} from '@dcic/signature-commons-schema/validate'
+import {validate} from '@maayanlab/signature-commons-schema/validate'
 validate(data)
 ```
 

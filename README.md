@@ -1,4 +1,4 @@
-[![](https://img.shields.io/npm/v/@maayanlab/signature-commons-schema.svg)](https://www.npmjs.com/package/@maayanlab/signature-commons-schema) [![](https://img.shields.io/npm/l/@maayanlab/signature-commons-schema.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![](https://img.shields.io/npm/v/@maayanlab/signature-commons-schema.svg)](https://github.com/MaayanLab/signature-commons-schema/packages/485371) [![](https://img.shields.io/npm/l/@maayanlab/signature-commons-schema.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
 # Signature Commons Schema
 

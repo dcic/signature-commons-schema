@@ -1,6 +1,6 @@
 {
   "name": "@maayanlab/signature-commons-schema",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "apiVersion": "v6",
   "description": "JSON-Schema validators for signature commons entities",
   "bin": {

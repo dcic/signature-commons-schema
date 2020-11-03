@@ -42,7 +42,7 @@
     "assert": "^2.0.0",
     "debug": "^4.1.1",
     "node-fetch": "^2.6.1",
-    "pjson": "^1.0.9",
+    "root-require": "^0.3.1",
     "require-from-web": "^1.2.0"
   },
   "devDependencies": {

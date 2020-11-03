@@ -3,8 +3,7 @@ import * as path from 'path'
 import * as fs from 'fs'
 import * as mkdirp from 'mkdirp'
 
-// const { apiVersion } = require('root-require')('package.json')
-const { apiVersion } = require('pjson')
+const { apiVersion } = require('root-require')('package.json')
 
 export function makeTemplate(
   templateString: string,

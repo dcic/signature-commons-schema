@@ -1,7 +1,8 @@
 import fetch from 'node-fetch'
 
 const requireFromWeb = require('require-from-web')
-const { apiVersion } = require('root-require')('package.json')
+// const { apiVersion } = require('root-require')('package.json')
+const apiVersion = "v6"
 
 const cache: {
   [key: string]: object

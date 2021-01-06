@@ -1,13 +1,10 @@
 {
-  "name": "@maayanlab/signature-commons-schema",
+  "name": "@dcic/signature-commons-schema",
   "version": "1.5.5",
   "apiVersion": "v6",
   "description": "JSON-Schema validators for signature commons entities",
   "bin": {
     "signature-commons-schema": "dist/cli.js"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

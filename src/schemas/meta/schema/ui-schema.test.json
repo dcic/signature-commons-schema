@@ -179,7 +179,7 @@
             "Insignia": {
               "visibility": 1,
               "type": "component",
-              "text": "@dcic/standalone/insignia",
+              "component": "@dcic/standalone/insignia",
               "location": "list",
               "props": {
                 "url": {

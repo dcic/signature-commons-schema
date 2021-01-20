@@ -24,14 +24,12 @@
               "visibility": 1,
               "type": "title",
               "text": "${'${meta.tool_name}'}",
-              "href": "${'${meta.tool_homepage_url}'}",
               "priority": 1
             },
             "Journal": {
               "visibility": 1,
               "type": "subtitle",
               "text": "${'${meta.subtitle}'}",
-              "subtitle": true,
               "priority": 2
             },
             "Pubmed": {
@@ -39,35 +37,34 @@
               "type": "display",
               "text": "${'${meta.pubmed}'}",
               "href": "${'${meta.pubmed}'}",
-              "display": true,
               "priority": 2
             },
             "Last Author": {
               "visibility": 1,
               "type": "text",
               "text": "${'${meta.last_author.name}'}",
+              "field": "meta.last_authon.name",
               "icon": "mdi-desktop-tower-monitor",
               "priority": 4
             },
             "Description": {
               "visibility": 1,
-              "type": "description",
+              "type": "tooltip",
               "text": "${'${meta.Description}'}",
-              "icon": "mdi-certificate",
               "priority": 5
             },
             "Pubmed Citations": {
               "visibility": 1,
               "type": "score",
               "text": "${'${meta.total_pubmed_citations}'}",
-              "fiend": "meta.total_pubmed_citations",
+              "field": "meta.total_pubmed_citations",
               "icon": "mdi-book-open-page-variant",
               "priority": 10
             },
             "Keywords": {
               "visibility": 1,
               "type": "array",
-              "text": "",
+              "object": "meta.Keywords",
               "field": "meta.Keywords",
               "icon": "mdi-twitter",
               "priority": 10
@@ -75,8 +72,8 @@
             "Insignia": {
               "visibility": 1,
               "type": "component",
-              "text": "@dcic/standalone/insignia",
-              "location": "list",
+              "component": "@dcic/standalone/insignia",
+              "location": "chip",
               "props": {
                 "url": {
                   "type": "string",
@@ -93,12 +90,17 @@
               },
               "priority": 7
             },
-            "Default": {
-              "visibility": 1,
-              "type": "text-default",
-              "text": "HI",
-              "icon": "mdi-twitter",
-              "priority": 10
+            "Search": {
+              "type": "search-props",
+              "search_examples": [
+                "some",
+                "text"
+              ]
+            },
+            "Filter": {
+              "type": "filter",
+              "field": "meta.Cell_Line.name",
+              "search_field": "meta.Cell_Line"
             }
           }
         } 

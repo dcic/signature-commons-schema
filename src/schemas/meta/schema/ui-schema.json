@@ -159,6 +159,38 @@
                 },
                 {
                   "type": "object",
+                  "description": "URL field",
+                  "properties": {
+                    "type": {
+                      "description": "The field type",
+                      "type": "string",
+                      "enum": [ "url" ]
+                    },
+                    "url": {
+                      "description": "The text of the display",
+                      "type": "string"
+                    },
+                    "text": {
+                      "description": "text to describe the url",
+                      "type": "string"
+                    },
+                    "visibility": {
+                      "description": "The visibility of the field (0: hidden, 1: usually visible, 2: always visible) default: 0",
+                      "type": "integer"
+                    },
+                    "priority": {
+                      "description": "The priority of the property",
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "url",
+                    "type"
+                  ]
+                },
+                {
+                  "type": "object",
                   "description": "tooltip",
                   "properties": {
                     "type": {
@@ -237,8 +269,12 @@
                       "description": "link to the component",
                       "type": "string"
                     },
+                    "text": {
+                      "description": "component label",
+                      "type": "string"
+                    },
                     "props": {
-                      "description": "props to pass to the component",
+                      "description": "props to pass to the component, format is similar to ui-schema properties",
                       "type": "object"
                     },
                     "location": {

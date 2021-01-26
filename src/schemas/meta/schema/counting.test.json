@@ -1,0 +1,212 @@
+{
+	"$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/examples.json",
+	"tests": [
+		{
+			"name": "Table (Valid)",
+			"valid": true,
+			"schema": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+			"data": {
+				"$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+				"id": "302fbc16-4f94-47ad-847a-b1640db1f0d1",
+				"meta": {
+					"$validator": "/dcic/signature-commons-schema/${API_VERSION}/meta/schema/counting.json",
+					"type": "table",
+					"text": "Library",
+					"icon": "mdi-library",
+					"model": "libraries",
+					"group": {
+						"row": 1,
+						"column": 1,
+						"size": 6,
+						"priority": 1
+					}
+				}
+			}
+		},
+		{
+			"name": "Table (Invalid)",
+			"valid": false,
+			"schema": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+			"data": {
+				"$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+				"id": "302fbc16-4f94-47ad-847a-b1640db1f0d1",
+				"meta": {
+					"$validator": "/dcic/signature-commons-schema/${API_VERSION}/meta/schema/counting.json",
+					"type": "table",
+					"text": "Library",
+					"icon": "mdi-library",
+					"group": {
+						"row": 1,
+						"column": 1,
+						"size": 6,
+						"priority": 1
+					}
+				}
+			}
+		},
+		{
+			"name": "Meta Count (Valid)",
+			"valid": true,
+			"schema": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+			"data": {
+				"$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+				"id": "302fbc16-4f94-47ad-847a-b1640db1f0d1",
+				"meta": {
+					"$validator": "/dcic/signature-commons-schema/${API_VERSION}/meta/schema/counting.json",
+					"type": "meta-count",
+					"text": "Library",
+					"icon": "mdi-library",
+					"model": "libraries",
+					"field": "meta.Name",
+					"group": {
+						"row": 1,
+						"column": 1,
+						"size": 6,
+						"priority": 1
+					}
+				}
+			}
+		},
+		{
+			"name": "Meta Count (Invalid)",
+			"valid": false,
+			"schema": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+			"data": {
+				"$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+				"id": "302fbc16-4f94-47ad-847a-b1640db1f0d1",
+				"meta": {
+					"$validator": "/dcic/signature-commons-schema/${API_VERSION}/meta/schema/counting.json",
+					"type": "meta-count",
+					"text": "Library",
+					"icon": "mdi-library",
+					"model": "librariesa",
+					"field": "meta.Name",
+					"group": {
+						"row": 1,
+						"column": 1,
+						"size": 6,
+						"priority": 1
+					}
+				}
+			}
+		},
+		{
+			"name": "Chart (Valid)",
+			"valid": true,
+			"schema": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+			"data": {
+				"$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+				"id": "302fbc16-4f94-47ad-847a-b1640db1f0d1",
+				"meta": {
+					"$validator": "/dcic/signature-commons-schema/${API_VERSION}/meta/schema/counting.json",
+					"type": "bar",
+					"text": "Library",
+					"icon": "mdi-library",
+					"model": "libraries",
+					"field": "meta.Name",
+					"search_field": "meta.Name",
+					"group": {
+						"row": 1,
+						"column": 1,
+						"size": 6,
+						"priority": 1
+					}
+				}
+			}
+		},
+		{
+			"name": "Chart (Invalid)",
+			"valid": false,
+			"schema": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+			"data": {
+				"$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+				"id": "302fbc16-4f94-47ad-847a-b1640db1f0d1",
+				"meta": {
+					"$validator": "/dcic/signature-commons-schema/${API_VERSION}/meta/schema/counting.json",
+					"type": "bars",
+					"text": "Library",
+					"icon": "mdi-library",
+					"model": "libraries",
+					"field": "meta.Name",
+					"search_field": "meta.Name",
+					"group": {
+						"row": 1,
+						"column": 1,
+						"size": 6,
+						"priority": 1
+					}
+				}
+			}
+		},
+		{
+			"name": "Score (Valid)",
+			"valid": true,
+			"schema": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+			"data": {
+				"$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+				"id": "302fbc16-4f94-47ad-847a-b1640db1f0d1",
+				"meta": {
+					"$validator": "/dcic/signature-commons-schema/${API_VERSION}/meta/schema/counting.json",
+					"type": "score",
+					"text": "Library",
+					"icon": "mdi-library",
+					"model": "libraries",
+					"field": "meta.Name",
+					"order_by": "meta.score",
+					"limit": 25,
+					"search_field": "meta.Name",
+					"group": {
+						"row": 1,
+						"column": 1,
+						"size": 6,
+						"priority": 1
+					}
+				}
+			}
+		},
+		{
+			"name": "Score (Invalid)",
+			"valid": false,
+			"schema": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+			"data": {
+				"$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+				"id": "302fbc16-4f94-47ad-847a-b1640db1f0d1",
+				"meta": {
+					"$validator": "/dcic/signature-commons-schema/${API_VERSION}/meta/schema/counting.json",
+					"type": "score",
+					"text": "Library",
+					"icon": "mdi-library",
+					"model": "libraries",
+					"field": "meta.Name",
+					"order_by": "meta.score",
+					"search_field": "meta.Name",
+					"group": {
+						"row": 1,
+						"column": 1,
+						"size": 6,
+						"priority": 1
+					}
+				}
+			}
+		},
+		{
+			"name": "Score (Valid)",
+			"valid": true,
+			"schema": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+			"data": {
+				"$validator": "/dcic/signature-commons-schema/${API_VERSION}/core/schema.json",
+				"id": "302fbc16-4f94-47ad-847a-b1640db1f0d1",
+				"meta": {
+					"$validator": "/dcic/signature-commons-schema/${API_VERSION}/meta/schema/counting.json",
+					"type": "filter",
+					"text": "Library",
+					"icon": "mdi-library",
+					"model": "libraries",
+					"field": "meta.Name",
+					"search_field": "meta.Name",
+					"priority": 1
+				}
+			}
+		}
+	]
+}

@@ -153,6 +153,7 @@
 					"model": "libraries",
 					"field": "meta.Name",
 					"order_by": "meta.score",
+					"order": "ASC",
 					"limit": 25,
 					"search_field": "meta.Name",
 					"group": {
@@ -199,12 +200,12 @@
 				"meta": {
 					"$validator": "/dcic/signature-commons-schema/v6/meta/schema/counting.json",
 					"type": "filter",
-					"text": "Library",
-					"icon": "mdi-library",
-					"model": "libraries",
-					"field": "meta.Name",
-					"search_field": "meta.Name",
-					"priority": 1
+					"text": "Association Type",
+					"icon": "mdi-ray-start-end",
+					"model": "signatures",
+					"field": "meta.Association_Type",
+					"search_field": "meta.Association_Type",
+					"priority": 3
 				}
 			}
 		}

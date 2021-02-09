@@ -74,12 +74,12 @@
                 },
                 {
                   "type": "object",
-                  "description": "Title or Subtitle",
+                  "description": "Title or Subtitle or alternative name",
                   "properties": {
                     "type": {
                       "description": "The field type",
                       "type": "string",
-                      "enum": [ "title", "subtitle" ]
+                      "enum": [ "title", "subtitle", "alternative" ]
                     },
                     "text": {
                       "description": "The text of the title",
@@ -280,7 +280,7 @@
                     "location": {
                       "description": "location of the component wrt the infocard, type infocard if this is a replacement of infocard",
                       "type": "string",
-                      "enum": ["top", "bottom", "infocard", "chip"]
+                      "enum": ["top", "bottom", "infocard", "chip", "left", "right"]
                     },
                     "visibility": {
                       "description": "The visibility of the field (0: hidden, 1: usually visible, 2: always visible) default: 0",

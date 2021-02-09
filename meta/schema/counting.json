@@ -192,6 +192,10 @@
               "type": "string",
               "description": "Name of the field for searching will default to field if not specified. (Top level for arrays of object)"
             },
+            "limit": {
+              "type": "integer",
+              "description": "Limit of counts to include in the visualization. Default: None"
+            },
             "group": {
               "type": "object",
               "description": "The group where the visual belong",
@@ -245,7 +249,96 @@
         },
         {
           "type": "object",
-          "description": "Score Count",
+          "description": "Schema for counting ids and translating the ids to name",
+          "properties": {
+            "text": {
+              "description": "Prefered name of the visualization",
+              "type": "string"
+            },
+            "type": {
+              "type": "string",
+              "description": "type of count schema",
+              "enum": [ "bar", "pie", "word" ]
+            },
+            "model": {
+              "type": "string",
+              "description": "name of table",
+              "enum": [ "entities",
+                "signatures",
+                "libraries",
+                "resources" ]
+            },
+            "field": {
+              "type": "string",
+              "description": "name of the field to count",
+              "enum": [ "entity",
+                "signature",
+                "library",
+                "resource" ]
+            },
+            "search_field": {
+              "type": "string",
+              "description": "Name to use to substitute the uuid"
+            },
+            "limit": {
+              "type": "integer",
+              "description": "Limit of counts to include in the visualization. Default: None"
+            },
+            "group": {
+              "type": "object",
+              "description": "The group where the visual belong",
+              "properties": {
+                "row": {
+                  "type": "number",
+                  "description": "The row where the component should be placed"
+                },
+                "column": {
+                  "type": "number",
+                  "description": "The column where the component should be placed"
+                },
+                "priority": {
+                  "type": "number",
+                  "description": "For groups with multiple components, we'll use this to order the components"
+                },
+                "xs": {
+                  "type": "number",
+                  "description": "From 1-12 how big is the component for xs screen"
+                },
+                "sm": {
+                  "type": "number",
+                  "description": "From 1-12 how big is the component for sm screen"
+                },
+                "md": {
+                  "type": "number",
+                  "description": "From 1-12 how big is the component for md screen"
+                },
+                "lg": {
+                  "type": "number",
+                  "description": "From 1-12 how big is the component for lg screen"
+                },
+                "xl": {
+                  "type": "number",
+                  "description": "From 1-12 how big is the component for xl screen"
+                },
+                "card_props": {
+                  "type": "object",
+                  "description": "props to pass to card"
+                }
+              }
+            }
+          },
+          "required": [
+            "type",
+            "text",
+            "model",
+            "field",
+            "search_field",
+            "group"
+          ]
+        },
+        {
+          "type": "object",
+          "description": "Score Count (displayed as barchart)",
           "properties": {
             "text": {
               "description": "Prefered name of the visualization",
@@ -272,9 +365,14 @@
               "type": "string",
               "description": "name of the field to order things by"
             },
+            "order": {
+              "type": "string",
+              "enum": ["ASC", "DESC"],
+              "description": "Ordering"
+            },
             "limit": {
               "type": "number",
-              "description": "limit of the score"
+              "description": "limit of the score. default: none"
             },
             "search_field": {
               "type": "string",
@@ -329,96 +427,7 @@
             "model",
             "field",
             "order_by",
-            "limit",
-            "group"
-          ]
-        },
-        {
-          "type": "object",
-          "description": "Alternate version of score count with no limit",
-          "properties": {
-            "text": {
-              "description": "Prefered name of the visualization",
-              "type": "string"
-            },
-            "type": {
-              "type": "string",
-              "description": "type of count schema",
-              "enum": [ "histogram" ]
-            },
-            "model": {
-              "type": "string",
-              "description": "name of table",
-              "enum": [ "entities",
-                "signatures",
-                "libraries",
-                "resources" ]
-            },
-            "field": {
-              "type": "string",
-              "description": "name of the field to count"
-            },
-            "order_by": {
-              "type": "string",
-              "description": "name of the field to order things by"
-            },
-            "limit": {
-              "type": "number",
-              "description": "limit of the score"
-            },
-            "search_field": {
-              "type": "string",
-              "description": "Name of the field for searching will default to field if not specified. (Top level for arrays of object)"
-            },
-            "group": {
-              "type": "object",
-              "description": "The group where the visual belong",
-              "properties": {
-                "row": {
-                  "type": "number",
-                  "description": "The row where the component should be placed"
-                },
-                "column": {
-                  "type": "number",
-                  "description": "The column where the component should be placed"
-                },
-                "priority": {
-                  "type": "number",
-                  "description": "For groups with multiple components, we'll use this to order the components"
-                },
-                "xs": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for xs screen"
-                },
-                "sm": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for sm screen"
-                },
-                "md": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for md screen"
-                },
-                "lg": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for lg screen"
-                },
-                "xl": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for xl screen"
-                },
-                "card_props": {
-                  "type": "object",
-                  "description": "props to pass to card"
-                }
-              }
-            }
-          },
-          "required": [
-            "type",
-            "text",
-            "model",
-            "field",
-            "order_by",
+            "order",
             "group"
           ]
         },

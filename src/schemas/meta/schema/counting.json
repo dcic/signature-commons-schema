@@ -1,556 +1,304 @@
 {
-  "$id": "/dcic/signature-commons-schema/${API_VERSION}/meta/counting/sigcom.json",
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "description": "Metadata describing a chart or a count stat for the landing page of Signature Commons",
-  "allOf": [
-    {
-      "$ref": "/dcic/signature-commons-schema/${API_VERSION}/core/meta.json"
-    },
-    {
-      "oneOf": [
-        {
-          "type": "object",
-          "description": "Table Counts",
-          "properties": {
-            "text": {
-              "description": "Prefered name of the table",
-              "type": "string"
-            },
-            "icon": {
-              "type": "string",
-              "description": "mdi icon to use"
-            },
-            "type": {
-              "type": "string",
-              "description": "type of count schema",
-              "enum": [ "table" ]
-            },
-            "model": {
-              "type": "string",
-              "description": "name of table",
-              "enum": [ "entities",
-                "signatures",
-                "libraries",
-                "resources" ]
-            },
-            "group": {
-              "type": "object",
-              "description": "The group where the visual belong",
-              "properties": {
-                "row": {
-                  "type": "number",
-                  "description": "The row where the component should be placed"
-                },
-                "column": {
-                  "type": "number",
-                  "description": "The column where the component should be placed"
-                },
-                "priority": {
-                  "type": "number",
-                  "description": "For groups with multiple components, we'll use this to order the components"
-                },
-                "xs": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for xs screen"
-                },
-                "sm": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for sm screen"
-                },
-                "md": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for md screen"
-                },
-                "lg": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for lg screen"
-                },
-                "xl": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for xl screen"
-                },
-                "card_props": {
-                  "type": "object",
-                  "description": "props to pass to card"
-                }
-              }
-            }
-          },
-          "required": [
-            "type",
-            "text",
-            "model",
-            "group"
-          ]
-        },
-        {
-          "type": "object",
-          "description": "Metadata Counts",
-          "properties": {
-            "text": {
-              "description": "Prefered name of the count",
-              "type": "string"
-            },
-            "type": {
-              "type": "string",
-              "description": "type of count schema",
-              "enum": [ "meta-count" ]
-            },
-            "icon": {
-              "type": "string",
-              "description": "mdi icon to use"
-            },
-            "model": {
-              "type": "string",
-              "description": "name of table",
-              "enum": [ "entities",
-                "signatures",
-                "libraries",
-                "resources" ]
-            },
-            "field": {
-              "type": "string",
-              "description": "name of the field to count"
-            },
-            "group": {
-              "type": "object",
-              "description": "The group where the visual belong",
-              "properties": {
-                "row": {
-                  "type": "number",
-                  "description": "The row where the component should be placed"
-                },
-                "column": {
-                  "type": "number",
-                  "description": "The column where the component should be placed"
-                },
-                "priority": {
-                  "type": "number",
-                  "description": "For groups with multiple components, we'll use this to order the components"
-                },
-                "xs": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for xs screen"
-                },
-                "sm": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for sm screen"
-                },
-                "md": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for md screen"
-                },
-                "lg": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for lg screen"
-                },
-                "xl": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for xl screen"
-                },
-                "card_props": {
-                  "type": "object",
-                  "description": "props to pass to card"
-                }
-              }
-            }
-          },
-          "required": [
-            "type",
-            "text",
-            "model",
-            "field",
-            "group"
-          ]
-        },
-        {
-          "type": "object",
-          "description": "Chart Count",
-          "properties": {
-            "text": {
-              "description": "Prefered name of the visualization",
-              "type": "string"
-            },
-            "type": {
-              "type": "string",
-              "description": "type of count schema",
-              "enum": [ "bar", "pie", "word" ]
-            },
-            "model": {
-              "type": "string",
-              "description": "name of table",
-              "enum": [ "entities",
-                "signatures",
-                "libraries",
-                "resources" ]
-            },
-            "field": {
-              "type": "string",
-              "description": "name of the field to count"
-            },
-            "search_field": {
-              "type": "string",
-              "description": "Name of the field for searching will default to field if not specified. (Top level for arrays of object)"
-            },
-            "limit": {
-              "type": "integer",
-              "description": "Limit of counts to include in the visualization. Default: None"
-            },
-            "group": {
-              "type": "object",
-              "description": "The group where the visual belong",
-              "properties": {
-                "row": {
-                  "type": "number",
-                  "description": "The row where the component should be placed"
-                },
-                "column": {
-                  "type": "number",
-                  "description": "The column where the component should be placed"
-                },
-                "priority": {
-                  "type": "number",
-                  "description": "For groups with multiple components, we'll use this to order the components"
-                },
-                "xs": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for xs screen"
-                },
-                "sm": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for sm screen"
-                },
-                "md": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for md screen"
-                },
-                "lg": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for lg screen"
-                },
-                "xl": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for xl screen"
-                },
-                "card_props": {
-                  "type": "object",
-                  "description": "props to pass to card"
-                }
-              }
-            }
-          },
-          "required": [
-            "type",
-            "text",
-            "model",
-            "field",
-            "group"
-          ]
-        },
-        {
-          "type": "object",
-          "description": "Schema for counting ids and translating the ids to name",
-          "properties": {
-            "text": {
-              "description": "Prefered name of the visualization",
-              "type": "string"
-            },
-            "type": {
-              "type": "string",
-              "description": "type of count schema",
-              "enum": [ "bar", "pie", "word" ]
-            },
-            "model": {
-              "type": "string",
-              "description": "name of table",
-              "enum": [ "entities",
-                "signatures",
-                "libraries",
-                "resources" ]
-            },
-            "field": {
-              "type": "string",
-              "description": "name of the field to count",
-              "enum": [ "entity",
-                "signature",
-                "library",
-                "resource" ]
-            },
-            "search_field": {
-              "type": "string",
-              "description": "Name to use to substitute the uuid"
-            },
-            "limit": {
-              "type": "integer",
-              "description": "Limit of counts to include in the visualization. Default: None"
-            },
-            "group": {
-              "type": "object",
-              "description": "The group where the visual belong",
-              "properties": {
-                "row": {
-                  "type": "number",
-                  "description": "The row where the component should be placed"
-                },
-                "column": {
-                  "type": "number",
-                  "description": "The column where the component should be placed"
-                },
-                "priority": {
-                  "type": "number",
-                  "description": "For groups with multiple components, we'll use this to order the components"
-                },
-                "xs": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for xs screen"
-                },
-                "sm": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for sm screen"
-                },
-                "md": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for md screen"
-                },
-                "lg": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for lg screen"
-                },
-                "xl": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for xl screen"
-                },
-                "card_props": {
-                  "type": "object",
-                  "description": "props to pass to card"
-                }
-              }
-            }
-          },
-          "required": [
-            "type",
-            "text",
-            "model",
-            "field",
-            "search_field",
-            "group"
-          ]
-        },
-        {
-          "type": "object",
-          "description": "Score Count (displayed as barchart)",
-          "properties": {
-            "text": {
-              "description": "Prefered name of the visualization",
-              "type": "string"
-            },
-            "type": {
-              "type": "string",
-              "description": "type of count schema",
-              "enum": [ "score" ]
-            },
-            "model": {
-              "type": "string",
-              "description": "name of table",
-              "enum": [ "entities",
-                "signatures",
-                "libraries",
-                "resources" ]
-            },
-            "field": {
-              "type": "string",
-              "description": "name of the field to count"
-            },
-            "order_by": {
-              "type": "string",
-              "description": "name of the field to order things by"
-            },
-            "order": {
-              "type": "string",
-              "enum": ["ASC", "DESC"],
-              "description": "Ordering"
-            },
-            "limit": {
-              "type": "number",
-              "description": "limit of the score. default: none"
-            },
-            "search_field": {
-              "type": "string",
-              "description": "Name of the field for searching will default to field if not specified. (Top level for arrays of object)"
-            },
-            "group": {
-              "type": "object",
-              "description": "The group where the visual belong",
-              "properties": {
-                "row": {
-                  "type": "number",
-                  "description": "The row where the component should be placed"
-                },
-                "column": {
-                  "type": "number",
-                  "description": "The column where the component should be placed"
-                },
-                "priority": {
-                  "type": "number",
-                  "description": "For groups with multiple components, we'll use this to order the components"
-                },
-                "xs": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for xs screen"
-                },
-                "sm": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for sm screen"
-                },
-                "md": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for md screen"
-                },
-                "lg": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for lg screen"
-                },
-                "xl": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for xl screen"
-                },
-                "card_props": {
-                  "type": "object",
-                  "description": "props to pass to card"
-                }
-              }
-            }
-          },
-          "required": [
-            "type",
-            "text",
-            "model",
-            "field",
-            "order_by",
-            "order",
-            "group"
-          ]
-        },
-        {
-          "type": "object",
-          "description": "User provided component",
-          "properties": {
-            "text": {
-              "description": "Prefered name of the visualization",
-              "type": "string"
-            },
-            "type": {
-              "type": "string",
-              "description": "type of count schema",
-              "enum": [ "component" ]
-            },
-            "component": {
-              "type": "string",
-              "description": "location of the component"
-            },
-            "props": {
-              "description": "user props to pass the component",
-              "type": "object"
-            },
-            "group": {
-              "type": "object",
-              "description": "The group where the visual belong",
-              "properties": {
-                "row": {
-                  "type": "number",
-                  "description": "The row where the component should be placed"
-                },
-                "column": {
-                  "type": "number",
-                  "description": "The column where the component should be placed"
-                },
-                "priority": {
-                  "type": "number",
-                  "description": "For groups with multiple components, we'll use this to order the components"
-                },
-                "xs": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for xs screen"
-                },
-                "sm": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for sm screen"
-                },
-                "md": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for md screen"
-                },
-                "lg": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for lg screen"
-                },
-                "xl": {
-                  "type": "number",
-                  "description": "From 1-12 how big is the component for xl screen"
-                },
-                "card_props": {
-                  "type": "object",
-                  "description": "props to pass to card"
-                }
-              }
-            }
-          },
-          "required": [
-            "type",
-            "text",
-            "props",
-            "component",
-            "group"
-          ]
-        },
-        {
-          "type": "object",
-          "description": "Search Filters",
-          "properties": {
-            "text": {
-              "description": "Prefered name of the visualization",
-              "type": "string"
-            },
-            "type": {
-              "type": "string",
-              "description": "type of count schema",
-              "enum": [ "filter" ]
-            },
-            "model": {
-              "type": "string",
-              "description": "name of table",
-              "enum": [ "entities",
-                "signatures",
-                "libraries",
-                "resources" ]
-            },
-            "icon": {
-              "type": "string",
-              "description": "mdi icon to use"
-            },
-            "field": {
-              "type": "string",
-              "description": "name of the filter field"
-            },
-            "search_field": {
-              "type": "string",
-              "description": "field use for searching"
-            },
-            "priority": {
-              "type": "number",
-              "description": "Order of the filter"
-            }
-          },
-          "required": [
-            "type",
-            "text",
-            "model",
-            "field",
-            "search_field"
-          ]
-        }
-      ],
-      "type": "object"
-    }
-  ]
+	"$id": "/dcic/signature-commons-schema/${API_VERSION}/meta/counting/sigcom.json",
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"description": "Metadata describing a chart or a count stat for the landing page of Signature Commons",
+	"allOf": [
+		{
+			"$ref": "/dcic/signature-commons-schema/${API_VERSION}/core/meta.json"
+		},
+		{
+			"oneOf": [
+				{
+					"type": "object",
+					"description": "Table Counts",
+					"properties": {
+						"text": {
+							"description": "Prefered name of the table",
+							"type": "string"
+						},
+						"icon": {
+							"type": "string",
+							"description": "mdi icon to use"
+						},
+						"type": {
+							"type": "string",
+							"description": "type of count schema",
+							"enum": [
+								"table"
+							]
+						},
+						"model": {
+							"type": "string",
+							"description": "name of table",
+							"enum": [
+								"entities",
+								"signatures",
+								"libraries",
+								"resources"
+							]
+						},
+						"priority": {
+							"type": "number",
+							"description": "For groups with multiple components, we'll use this to order the components"
+						}
+					},
+					"required": [
+						"type",
+						"text",
+						"model",
+						"priority"
+					]
+				},
+				{
+					"type": "object",
+					"description": "Metadata Counts",
+					"properties": {
+						"text": {
+							"description": "Prefered name of the count",
+							"type": "string"
+						},
+						"type": {
+							"type": "string",
+							"description": "type of count schema",
+							"enum": [
+								"meta-count"
+							]
+						},
+						"icon": {
+							"type": "string",
+							"description": "mdi icon to use"
+						},
+						"model": {
+							"type": "string",
+							"description": "name of table",
+							"enum": [
+								"entities",
+								"signatures",
+								"libraries",
+								"resources"
+							]
+						},
+						"field": {
+							"type": "string",
+							"description": "name of the field to count"
+						},
+						"priority": {
+							"type": "number",
+							"description": "For groups with multiple components, we'll use this to order the components"
+						}
+					},
+					"required": [
+						"type",
+						"text",
+						"model",
+						"field",
+						"priority"
+					]
+				},
+				{
+					"type": "object",
+					"description": "Chart Count",
+					"properties": {
+						"text": {
+							"description": "Prefered name of the visualization",
+							"type": "string"
+						},
+						"type": {
+							"type": "string",
+							"description": "type of count schema",
+							"enum": [
+								"bar",
+								"pie",
+								"word"
+							]
+						},
+						"model": {
+							"type": "string",
+							"description": "name of table",
+							"enum": [
+								"entities",
+								"signatures",
+								"libraries",
+								"resources"
+							]
+						},
+						"field": {
+							"type": "string",
+							"description": "name of the field to count"
+						},
+						"search_field": {
+							"type": "string",
+							"description": "Name of the field for searching will default to field if not specified. (Top level for arrays of object)"
+						},
+						"limit": {
+							"type": "integer",
+							"description": "Limit of counts to include in the visualization. Default: None"
+						},
+						"priority": {
+							"type": "number",
+							"description": "For groups with multiple components, we'll use this to order the components"
+						}
+					},
+					"required": [
+						"type",
+						"text",
+						"model",
+						"field",
+						"priority"
+					]
+				},
+				{
+					"type": "object",
+					"description": "Score Count (displayed as barchart)",
+					"properties": {
+						"text": {
+							"description": "Prefered name of the visualization",
+							"type": "string"
+						},
+						"type": {
+							"type": "string",
+							"description": "type of count schema",
+							"enum": [
+								"score"
+							]
+						},
+						"model": {
+							"type": "string",
+							"description": "name of table",
+							"enum": [
+								"entities",
+								"signatures",
+								"libraries",
+								"resources"
+							]
+						},
+						"field": {
+							"type": "string",
+							"description": "name of the field to count"
+						},
+						"order_by": {
+							"type": "string",
+							"description": "name of the field to order things by"
+						},
+						"order": {
+							"type": "string",
+							"enum": [
+								"ASC",
+								"DESC"
+							],
+							"description": "Ordering"
+						},
+						"limit": {
+							"type": "number",
+							"description": "limit of the score. default: none"
+						},
+						"search_field": {
+							"type": "string",
+							"description": "Name of the field for searching will default to field if not specified. (Top level for arrays of object)"
+						},
+						"priority": {
+							"type": "number",
+							"description": "For groups with multiple components, we'll use this to order the components"
+						}
+					},
+					"required": [
+						"type",
+						"text",
+						"model",
+						"field",
+						"order_by",
+						"order",
+						"priority"
+					]
+				},
+				{
+					"type": "object",
+					"description": "User provided component",
+					"properties": {
+						"text": {
+							"description": "Prefered name of the visualization",
+							"type": "string"
+						},
+						"type": {
+							"type": "string",
+							"description": "type of count schema",
+							"enum": [
+								"component"
+							]
+						},
+						"component": {
+							"type": "string",
+							"description": "location of the component"
+						},
+						"props": {
+							"description": "user props to pass the component",
+							"type": "object"
+						},
+						"priority": {
+							"type": "number",
+							"description": "For groups with multiple components, we'll use this to order the components"
+						}
+					},
+					"required": [
+						"type",
+						"text",
+						"props",
+						"component",
+						"priority"
+					]
+				},
+				{
+					"type": "object",
+					"description": "Search Filters",
+					"properties": {
+						"text": {
+							"description": "Prefered name of the visualization",
+							"type": "string"
+						},
+						"type": {
+							"type": "string",
+							"description": "type of count schema",
+							"enum": [
+								"filter"
+							]
+						},
+						"model": {
+							"type": "string",
+							"description": "name of table",
+							"enum": [
+								"entities",
+								"signatures",
+								"libraries",
+								"resources"
+							]
+						},
+						"icon": {
+							"type": "string",
+							"description": "mdi icon to use"
+						},
+						"field": {
+							"type": "string",
+							"description": "name of the filter field"
+						},
+						"search_field": {
+							"type": "string",
+							"description": "field use for searching"
+						},
+						"priority": {
+							"type": "number",
+							"description": "Order of the filter"
+						}
+					},
+					"required": [
+						"type",
+						"text",
+						"model",
+						"field",
+						"search_field"
+					]
+				}
+			],
+			"type": "object"
+		}
+	]
 }

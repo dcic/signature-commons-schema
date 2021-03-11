@@ -1,51 +1,547 @@
 {
-  "$id": "/dcic/signature-commons-schema/v6/meta/schema/landing-ui.json",
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "description": "Metadata describing a signature commons resource",
-  "allOf": [
-    {
-      "$ref": "/dcic/signature-commons-schema/v6/core/meta.json"
-    },
-    {
-      "oneOf": [
-        {
-          "type": "object",
-          "description": "Landing page changes",
-          "properties": {
-            "landing": {
-              "type": "boolean",
-              "description": "use these changes in the landing page"
-            },
-            "content": {
-              "$ref": "/dcic/signature-commons-schema/v6/meta/schema/content.json",
-              "description": "Disease perturbations"
-            }
-          },
-          "required": [
-            "landing",
-            "content"
-          ]
+	"$id": "/dcic/signature-commons-schema/v6/meta/schema/landing-ui.json",
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"description": "Metadata describing a signature commons resource",
+	"allOf": [
+		{
+			"$ref": "/dcic/signature-commons-schema/v6/core/meta.json"
+		},
+		{
+			"type": "object",
+			"description": "Landing page changes",
+			"properties": {
+				"favicon": {
+					"description": "favicon props",
+					"type": "object",
+					"properties": {
+						"src": {
+							"description": "The src of the image",
+							"type": "string"
+						},
+						"alt": {
+							"description": "The alt string of the image",
+							"type": "string"
+						},
+						"title": {
+							"description": "The title to use with the favicon",
+							"type": "string"
+						}
+					},
+					"required": [
+						"src",
+						"alt",
+						"title"
+					]
+				},
+				"header_info": {
+					"description": "favicon props",
+					"type": "object",
+					"properties": {
+						"header_left": {
+							"description": "text to display on the left of the header image",
+							"type": "string"
+						},
+						"header_right": {
+							"description": "text to display on the right of the header image",
+							"type": "string"
+						},
+						"icon": {
+							"description": "icon props",
+							"type": "object",
+							"properties": {
+								"src": {
+									"description": "The src of the image",
+									"type": "string"
+								},
+								"alt": {
+									"description": "The alt string of the image",
+									"type": "string"
+								},
+								"style": {
+									"description": "style props",
+									"type": "object"
+								}
+							},
+							"required": [
+								"src",
+								"alt"
+							]
+						},
+						"menu_props": {
+							"description": "props to pass to the menu",
+							"type": "object"
+						}
+					}
+				},
+				"background_props": {
+					"description": "props to pass for the background",
+					"type": "object"
+				},
+				"nav": {
+					"description": "Props for navigation",
+					"type": "object",
+					"properties": {
+						"MetadataSearch": {
+							"description": "Props for metadata search",
+							"type": "object",
+							"properties": {
+								"active": {
+									"description": "Tells if the endpoint is active",
+									"type": "boolean"
+								},
+								"endpoint": {
+									"description": "Metadata search endpoint (/ prefix)",
+									"type": "string"
+								},
+								"navName": {
+									"description": "Metadata search text",
+									"type": "string"
+								},
+								"props": {
+									"description": "props to pass to metadata search",
+									"type": "object",
+									"properties": {
+										"models_tabs": {
+											"description": "models to use for searching",
+											"type": "array",
+											"items": {
+												"description": "name of the model",
+												"type": "string",
+												"enum": [
+													"resources",
+													"libraries",
+													"signatures",
+													"entities"
+												]
+											}
+										},
+										"entry_model": {
+											"description": "model to start searching on",
+											"type": "string",
+											"enum": [
+												"resources",
+												"libraries",
+												"signatures",
+												"entities"
+											]
+										},
+										"placeholder": {
+											"description": "placeholder for the search box",
+											"type": "string"
+										},
+										"examples": {
+											"description": "Sample searches",
+											"type": "object",
+											"patternProperties": {
+												".*": {
+													"description": "Example for each model",
+													"type": "array",
+													"items": {
+														"description": "an example",
+														"type": "string"
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						},
+						"SignatureSearch": {
+							"description": "Props for Signature search",
+							"type": "object",
+							"properties": {
+								"active": {
+									"description": "Tells if the endpoint is active",
+									"type": "boolean"
+								},
+								"endpoint": {
+									"description": "Signature search endpoint (/ prefix)",
+									"type": "string"
+								},
+								"navName": {
+									"description": "Signature search text",
+									"type": "string"
+								},
+								"props": {
+									"description": "props to pass to Signature search",
+									"type": "object",
+									"properties": {
+										"types": {
+											"description": "sigsearch types",
+											"type": "object",
+											"properties": {
+												"Overlap": {
+													"description": "Overlap Props",
+													"type": "object",
+													"properties": {
+														"active": {
+															"description": "Make the overlap search active",
+															"type": "boolean"
+														},
+														"up_placeholder": {
+															"description": "Placeholder of the up textbox",
+															"type": "string"
+														},
+														"down_placeholder": {
+															"description": "Placeholder of the down textbox",
+															"type": "string"
+														},
+														"switch": {
+															"description": "Name of the switch button",
+															"type": "string"
+														},
+														"examples": {
+															"description": "list of examples",
+															"type": "array",
+															"items": {
+																"description": "Example",
+																"type": "object",
+																"properties": {
+																	"label": {
+																		"description": "label of the example",
+																		"type": "string"
+																	},
+																	"link": {
+																		"description": "external link for the example",
+																		"type": "string",
+																		"format": "uri"
+																	},
+																	"input": {
+																		"description": "sample input",
+																		"type": "object",
+																		"properties": {
+																			"up_entities": {
+																				"description": "newline separated entities",
+																				"type": "string"
+																			},
+																			"down_entities": {
+																				"description": "newline separated entities",
+																				"type": "string"
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												},
+												"Rank": {
+													"description": "Overlap Props",
+													"type": "object",
+													"properties": {
+														"active": {
+															"description": "Make the overlap search active",
+															"type": "boolean"
+														},
+														"placeholder": {
+															"description": "Placeholder of the textbox",
+															"type": "string"
+														},
+														"switch": {
+															"description": "Name of the switch button",
+															"type": "string"
+														},
+														"examples": {
+															"description": "list of examples",
+															"type": "array",
+															"items": {
+																"description": "Example",
+																"type": "object",
+																"properties": {
+																	"label": {
+																		"description": "label of the example",
+																		"type": "string"
+																	},
+																	"link": {
+																		"description": "external link for the example",
+																		"type": "string",
+																		"format": "uri"
+																	},
+																	"input": {
+																		"description": "sample input",
+																		"type": "object",
+																		"properties": {
+																			"entities": {
+																				"description": "newline separated entities",
+																				"type": "string"
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						},
+						"Resources": {
+							"description": "Props for Resources",
+							"type": "object",
+							"properties": {
+								"active": {
+									"description": "Tells if the endpoint is active",
+									"type": "boolean"
+								},
+								"endpoint": {
+									"description": "Resources endpoint (/ prefix)",
+									"type": "string"
+								},
+								"navName": {
+									"description": "Resources text",
+									"type": "string"
+								}
+							}
+						},
+						"API": {
+							"description": "Props for API",
+							"type": "object",
+							"properties": {
+								"active": {
+									"description": "Tells if the endpoint is active",
+									"type": "boolean"
+								},
+								"endpoint": {
+									"description": "API endpoint (/ prefix)",
+									"type": "string"
+								},
+								"navName": {
+									"description": "API text",
+									"type": "string"
+								}
+							}
+						}
+					}
+				},
+				"extraNav": {
+					"description": "Extra navigation props",
+					"type": "array",
+					"items": {
+						"description": "extra navigation",
+						"oneOf": [
+							{
+								"description": "external navigation",
+								"type": "object",
+								"properties": {
+									"type": {
+										"description": "type of navigation",
+										"type": "string",
+										"enum": [
+											"external"
+										]
+									},
+									"endpoint": {
+										"description": "endpoint to point to",
+										"type": "string"
+									},
+									"navName": {
+										"description": "name of the tab",
+										"type": "string"
+									}
+								},
+								"required": [
+									"type",
+									"endpoint",
+									"navName"
+								]
+							},
+							{
+								"description": "markdown",
+								"type": "object",
+								"properties": {
+									"type": {
+										"description": "type of navigation",
+										"type": "string",
+										"enum": [
+											"markdown"
+										]
+									},
+									"src": {
+										"description": "src to use for the markdown",
+										"type": "string"
+									},
+									"navName": {
+										"description": "name of the tab",
+										"type": "string"
+									}
+								},
+								"required": [
+									"type",
+									"src",
+									"navName"
+								]
+							},
+							{
+								"description": "iframe",
+								"type": "object",
+								"properties": {
+									"type": {
+										"description": "type of navigation",
+										"type": "string",
+										"enum": [
+											"iframe"
+										]
+									},
+									"navName": {
+										"description": "name of the tab",
+										"type": "string"
+									},
+									"iframe": {
+										"description": "iframes to use",
+										"type": "object",
+										"patternProperties": {
+											".*": {
+												"description": "iframe props",
+												"type": "object",
+												"properties": {
+													"src": {
+														"description": "src of the iframe",
+														"type": "string"
+													},
+													"id": {
+														"description": "id of the iframe",
+														"type": "string"
+													},
+													"name": {
+														"description": "name of the iframe",
+														"type": "string"
+													},
+													"frameBorder": {
+														"description": "frame border",
+														"type": "number"
+													},
+													"height": {
+														"description": "height",
+														"type": "number"
+													}
+												}
+											}
+										}
+									}
+								},
+								"required": [
+									"type",
+									"iframe",
+									"navName"
+								]
+							}
+						]
+					}
         },
-        {
+        "preferred_name": {
+          "description": "preferred name for the models",
           "type": "object",
-          "description": "Landing page changes",
           "properties": {
-            "admin": {
-              "type": "boolean",
-              "description": "use these changes in the admin page"
+            "resources": {
+              "description": "preferred name for resources",
+              "type": "string"
             },
-            "content": {
-              "$ref": "/dcic/signature-commons-schema/v6/meta/schema/content.json",
-              "description": "Disease perturbations"
+            "libraries": {
+              "description": "preferred name for libraries",
+              "type": "string"
+            },
+            "signatures": {
+              "description": "preferred name for signatures",
+              "type": "string"
+            },
+            "entities": {
+              "description": "preferred name for entities",
+              "type": "string"
             }
-          },
-          "required": [
-            "admin",
-            "content"
-          ]
+          }
+        },
+        "preferred_name_singular": {
+          "description": "preferred name for the models",
+          "type": "object",
+          "properties": {
+            "resources": {
+              "description": "preferred name for resources",
+              "type": "string"
+            },
+            "libraries": {
+              "description": "preferred name for libraries",
+              "type": "string"
+            },
+            "signatures": {
+              "description": "preferred name for signatures",
+              "type": "string"
+            },
+            "entities": {
+              "description": "preferred name for entities",
+              "type": "string"
+            }
+          }
+        },
+        "footer_links": {
+          "description": "links to put in footer",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "description": "footer",
+            "properties": {
+              "src": {
+                "description": "src to use for the image",
+                "type": "string"
+              },
+              "alt": {
+                "description": "alt to use for the image",
+                "type": "string"
+              },
+              "href": {
+                "description": "external link",
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        },
+        "theme_mod": {
+          "description": "Material UI theme changes https://material-ui.com/customization/default-theme/#default-theme",
+          "type": "object"
+        },
+        "github": {
+          "description": "link to use for github",
+          "type": "string",
+          "format": "uri"
+        },
+        "github_issues": {
+          "description": "link to use for github issues",
+          "type": "string",
+          "format": "uri"
+        },
+        "resource_order": {
+          "description": "Modifies the ordering of the resource",
+          "type": "object",
+          "patternProperties": {
+            ".*": {
+              "description": "iframe props",
+              "type": "object",
+              "properties": {
+                "label": {
+                  "description": "label",
+                  "type": "string"
+                },
+                "priority": {
+                  "description": "priority",
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "about": {
+          "description": "link to about markdown",
+          "type": "string"
+        },
+        "terms": {
+          "description": "link to terms markdown",
+          "type": "string"
         }
-      ],
-      "type": "object"
-    }
-  ]
+			}
+		}
+	]
 }

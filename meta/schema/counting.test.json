@@ -14,12 +14,7 @@
 					"text": "Library",
 					"icon": "mdi-library",
 					"model": "libraries",
-					"group": {
-						"row": 1,
-						"column": 1,
-						"size": 6,
-						"priority": 1
-					}
+					"priority": 1
 				}
 			}
 		},
@@ -35,12 +30,7 @@
 					"type": "table",
 					"text": "Library",
 					"icon": "mdi-library",
-					"group": {
-						"row": 1,
-						"column": 1,
-						"size": 6,
-						"priority": 1
-					}
+					"priority": 1
 				}
 			}
 		},
@@ -58,12 +48,7 @@
 					"icon": "mdi-library",
 					"model": "libraries",
 					"field": "meta.Name",
-					"group": {
-						"row": 1,
-						"column": 1,
-						"size": 6,
-						"priority": 1
-					}
+					"priority": 1
 				}
 			}
 		},
@@ -81,12 +66,7 @@
 					"icon": "mdi-library",
 					"model": "librariesa",
 					"field": "meta.Name",
-					"group": {
-						"row": 1,
-						"column": 1,
-						"size": 6,
-						"priority": 1
-					}
+					"priority": 1
 				}
 			}
 		},
@@ -105,12 +85,7 @@
 					"model": "libraries",
 					"field": "meta.Name",
 					"search_field": "meta.Name",
-					"group": {
-						"row": 1,
-						"column": 1,
-						"size": 6,
-						"priority": 1
-					}
+					"priority": 1
 				}
 			}
 		},
@@ -129,12 +104,7 @@
 					"model": "libraries",
 					"field": "meta.Name",
 					"search_field": "meta.Name",
-					"group": {
-						"row": 1,
-						"column": 1,
-						"size": 6,
-						"priority": 1
-					}
+					"priority": 1
 				}
 			}
 		},
@@ -156,12 +126,7 @@
 					"order": "ASC",
 					"limit": 25,
 					"search_field": "meta.Name",
-					"group": {
-						"row": 1,
-						"column": 1,
-						"size": 6,
-						"priority": 1
-					}
+					"priority": 1
 				}
 			}
 		},
@@ -181,12 +146,7 @@
 					"field": "meta.Name",
 					"order_by": "meta.score",
 					"search_field": "meta.Name",
-					"group": {
-						"row": 1,
-						"column": 1,
-						"size": 6,
-						"priority": 1
-					}
+					"priority": 1
 				}
 			}
 		},
